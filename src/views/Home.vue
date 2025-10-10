@@ -95,7 +95,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref } from "vue";
 
 const codeAnimation = ref(`const innovation = () => {
   while (true) {
@@ -105,33 +105,34 @@ const codeAnimation = ref(`const innovation = () => {
   }
 };`);
 
-const codeSnippets = [
-  `const innovation = () => {
-  while (true) {
-    create();
-    innovate();
-    deliver();
-  }
-};`,
-  `class CodeNav {
-  build() {
-    return software
-      .withQuality()
-      .withSpeed()
-      .withLove();
-  }
-}`,
-  `async function future() {
-  const tech = await latest();
-  const users = await happy();
-  return success;
-}`,
-];
+// Commented out for future animation implementation
+// const codeSnippets = [
+//   `const innovation = () => {
+//   while (true) {
+//     create();
+//     innovate();
+//     deliver();
+//   }
+// };`,
+//   `class CodeNav {
+//   build() {
+//     return software
+//       .withQuality()
+//       .withSpeed()
+//       .withLove();
+//   }
+// }`,
+//   `async function future() {
+//   const tech = await latest();
+//   const users = await happy();
+//   return success;
+// }`,
+// ];
 
-const stackList = [`Rolldown`, `Vue`, `TsDown`, `React`, `Swift`, ``];
+// const stackList = [`Rolldown`, `Vue`, `TsDown`, `React`, `Swift`, ``];
 
-let animationIndex = 0;
-let animationInterval: number;
+// let animationIndex = 0;
+// let animationInterval: number;
 
 // onMounted(() => {
 //   animationInterval = setInterval(() => {
@@ -139,17 +140,10 @@ let animationInterval: number;
 //     codeAnimation.value = codeSnippets[animationIndex]
 //   }, 3000)
 // })
-function changeCodeBlock() {
-  let isRemoved = false;
-  setInterval(() => {
-    if (!isRemoved) {
-    }
-  }, 20);
-}
 
-onUnmounted(() => {
-  clearInterval(animationInterval);
-});
+// onUnmounted(() => {
+//   clearInterval(animationInterval);
+// });
 </script>
 
 <style scoped lang="scss">
