@@ -11,7 +11,10 @@
       <div class="product mygrammar-section">
         <div class="product-content">
           <div class="product-info">
-            <h2>MyGrammar</h2>
+            <div class="product-header">
+              <h2>MyGrammar</h2>
+              <span class="tag soon">Coming Soon</span>
+            </div>
             <p class="product-tagline">Write with confidence, powered by AI</p>
             <p class="product-description">
               MyGrammar is an advanced assistant that help you to fix your
@@ -43,12 +46,15 @@
                   <span class="tech-badge">iOS</span>
                 </div>
               </div>
-              <a
-                class="explore-link"
-                href="https://mygrammar.xiaodong.moe/"
-                target="_blank"
-                >Explore</a
-              >
+              <div class="info-right">
+                <!-- <a class="download">Download on iOS</a> -->
+                <a
+                  class="explore-link"
+                  href="https://mygrammar.xiaodong.moe/"
+                  target="_blank"
+                  >Explore</a
+                >
+              </div>
             </div>
           </div>
           <div class="product-visual">
@@ -244,10 +250,26 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
 }
 
 .product-info {
+  .product-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   h2 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     @include gradient-text($primary-gradient);
+  }
+
+  .tag {
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+
+    &.soon {
+      border: 2px solid $accent-color;
+      color: $accent-color;
+    }
   }
 }
 
@@ -312,6 +334,19 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
   border-radius: 20px;
   font-size: 0.9rem;
   color: $text-medium;
+}
+
+.info-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.download {
+  background: $primary-gradient;
+  color: $white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
 }
 
 .explore-link {
