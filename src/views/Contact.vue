@@ -45,7 +45,16 @@
         </div>
       </div>
 
-      <form @submit.prevent="handleSubmit" class="contact-form">
+      <div class="cal-inline">
+        <iframe
+          src="https://cal.com/xiaodong2008/busniess"
+          width="100%"
+          height="100%"
+          frameborder="0"
+        ></iframe>
+      </div>
+
+      <form @submit.prevent="handleSubmit" class="contact-form" v-if="false">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Full Name</label>
@@ -294,6 +303,16 @@ $transition: all 0.3s ease;
       font-size: 0.9rem;
     }
   }
+}
+
+.cal-inline {
+  background: rgba($white, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: $border-radius;
+  // padding: $spacing-lg;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 500px;
 }
 
 .contact-form {
