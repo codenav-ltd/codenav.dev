@@ -143,13 +143,12 @@ const handleSubmit = async () => {
 </script>
 
 <style scoped lang="scss">
-$primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-$secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-$primary-color: #667eea;
-$primary-hover: #5a6fd8;
-$secondary-color: #764ba2;
+$primary-gradient: linear-gradient(135deg, #858585 0%, #000000 100%);
+$primary-color: #000000;
+$primary-hover: #858585;
+$secondary-color: #000000;
 $accent-color: #42b883;
-$text-color: #333;
+$text-color: #000000;
 $text-light: #666;
 $border-color: #e1e4e8;
 $bg-light: #f8f9fa;

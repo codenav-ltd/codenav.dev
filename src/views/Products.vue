@@ -161,7 +161,7 @@
 
 <style scoped lang="scss">
 // Variables
-$primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$primary-gradient: linear-gradient(135deg, #858585 0%, #000000 100%);
 $secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 $primary-color: #667eea;
 $secondary-color: #f093fb;

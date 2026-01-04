@@ -3,7 +3,7 @@
     <header class="navbar">
       <div class="nav-container">
         <router-link to="/" class="logo">
-          <Logo :black="true" width="36" height="36" class="logo-comp" />
+          <Logo :black="true" :width="36" :height="36" class="logo-comp" />
           <span class="logo-code">Code</span><span class="logo-nav">Nav</span>
         </router-link>
         <nav class="nav-links">
@@ -11,8 +11,8 @@
           <router-link to="/products">Products</router-link>
           <router-link to="/about">About</router-link>
           <router-link to="/tech-stack">Tech Stack</router-link>
+          <router-link to="/contact">Contact</router-link>
           <div class="btn-container">
-            <router-link to="/contact" class="contact-btn">Contact</router-link>
             <a target="_blank" href="https://sso.codenav.dev" class="sso-btn">Sign In</a>
           </div>
         </nav>
@@ -152,7 +152,7 @@ const closeMobileMenu = () => {
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #667eea, #764ba2);
+      background: linear-gradient(90deg, #858585, #000000);
       transition: width 0.3s;
     }
 
@@ -162,7 +162,7 @@ const closeMobileMenu = () => {
     }
 
     &.router-link-active {
-      color: #667eea;
+      color: #000000;
     }
   }
 }
@@ -174,7 +174,7 @@ const closeMobileMenu = () => {
 }
 
 .contact-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #858585 0%, #000000 100%);
   color: white !important;
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
@@ -182,7 +182,7 @@ const closeMobileMenu = () => {
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
 
   &::after {
@@ -220,7 +220,7 @@ const closeMobileMenu = () => {
   display: block;
   width: 25px;
   height: 3px;
-  background: #667eea;
+  background: #000000;
   margin: 5px 0;
   transition: all 0.3s;
   border-radius: 2px;
@@ -246,13 +246,13 @@ const closeMobileMenu = () => {
 .mobile-nav a:hover,
 .mobile-nav a.router-link-active {
   background: linear-gradient(135deg,
-      rgba(102, 126, 234, 0.1) 0%,
-      rgba(118, 75, 162, 0.1) 100%);
-  color: #667eea;
+      rgba(133, 133, 133, 0.1) 0%,
+      rgba(0, 0, 0, 0.1) 100%);
+  color: #000000;
 }
 
 .footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #858585 0%, #000000 100%);
   color: white;
   padding: 2rem;
   text-align: center;

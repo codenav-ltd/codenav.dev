@@ -97,9 +97,9 @@ import Logo from "../components/logo.vue";
 <style scoped lang="scss">
 // Variables
 $primary-gradient: linear-gradient(135deg, #858585 0%, #000000 100%);
-$secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-$primary-color: #667eea;
-$secondary-color: #764ba2;
+$secondary-gradient: linear-gradient(135deg, #796363 0%, #000000 100%);
+$primary-color: #000000;
+$secondary-color: #858585;
 $accent-color: #42b883;
 $text-dark: #333;
 $text-light: #666;

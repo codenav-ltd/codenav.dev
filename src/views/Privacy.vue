@@ -99,7 +99,7 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
-$primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$primary-gradient: linear-gradient(135deg, #858585 0%, #000000 100%);
 $primary-color: #667eea;
 $text-dark: #333;
 $text-medium: #555;

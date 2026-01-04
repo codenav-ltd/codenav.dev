@@ -154,8 +154,8 @@ $mobile-breakpoint: 768px;
 
 $gradient-primary: linear-gradient(
   135deg,
-  $primary-color 0%,
-  $secondary-color 100%
+  #858585 0%,
+  #000000 100%
 );
 $gradient-subtle: linear-gradient(
   135deg,
