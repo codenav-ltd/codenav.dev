@@ -1,8 +1,8 @@
 <template>
   <div class="terms-conditions">
     <div class="hero-section">
-      <h1>Terms & Conditions</h1>
-      <p class="last-updated"><strong>Last updated:</strong> January 4, 2026</p>
+      <h1>{{ $t('terms.title') }}</h1>
+      <p class="last-updated"><strong>{{ $t('terms.lastUpdated') }}</strong> {{ $t('terms.date') }}</p>
     </div>
 
     <div class="content-section">

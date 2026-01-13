@@ -1,0 +1,214 @@
+{
+  "nav": {
+    "home": "首页",
+    "products": "产品",
+    "about": "关于",
+    "techStack": "技术栈",
+    "contact": "联系我们",
+    "signIn": "登录"
+  },
+  "footer": {
+    "company": "CodeNav",
+    "copyright": "© 2025 CodeNav Technology Ltd. 保留所有权利。",
+    "tagline": "构建未来的软件",
+    "privacyPolicy": "隐私政策",
+    "termsConditions": "条款与条件",
+    "icpRecord": "粤ICP备2026004131号-1"
+  },
+  "home": {
+    "hero": {
+      "title": "CodeNav",
+      "tagline": "构建未来的软件",
+      "subtitle": "开发者主导创新 • 尖端技术 • 用户至上设计",
+      "exploreProducts": "探索我们的产品"
+    },
+    "features": {
+      "title": "为什么选择 CodeNav？",
+      "developerLed": {
+        "title": "开发者主导",
+        "description": "由真正理解优秀软件需求的开发者创立和运营"
+      },
+      "latestTech": {
+        "title": "最新技术栈",
+        "description": "我们使用并精通最新、最高效的技术"
+      },
+      "userCentric": {
+        "title": "以用户为中心",
+        "description": "每一行代码都以最终用户的体验为出发点"
+      },
+      "innovationFirst": {
+        "title": "创新优先",
+        "description": "突破界限，创造定义未来的解决方案"
+      }
+    },
+    "productsPreview": {
+      "title": "我们的产品",
+      "myGrammar": {
+        "title": "MyGrammar",
+        "description": "由人工智能驱动的先进语法检查和写作增强工具",
+        "learnMore": "了解更多 →"
+      },
+      "trafficTrack": {
+        "title": "TrafficTrack",
+        "description": "为香港用户提供的实时到达时间应用",
+        "learnMore": "了解更多 →"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "关于 CodeNav",
+      "subtitle": "开发者引领创新的地方"
+    },
+    "story": {
+      "title": "我们的故事",
+      "paragraph1": "CodeNav 技术有限公司源于一个简单的信念：最好的软件是由真正理解代码和用户的开发者构建的。作为一家完全由开发者主导的公司，我们为每个项目带来独特的视角。",
+      "paragraph2": "我们不仅仅是编写代码；我们创造体验。我们不仅仅是使用技术；我们突破技术的边界。我们团队的每个成员都热衷于创造真正改变人们工作和生活方式的软件。"
+    },
+    "philosophy": {
+      "title": "我们的理念",
+      "developerFirst": {
+        "title": "开发者优先思维",
+        "description": "我们理解开发者面临的挑战，因为我们也面临同样的挑战。这驱使我们创造我们自己也喜欢使用的工具和解决方案。"
+      },
+      "bleedingEdge": {
+        "title": "前沿技术",
+        "description": "我们不害怕采用最新的技术。如果它能让我们的产品更好、更快或更令人愉悦，我们就会学习、掌握并实施它。"
+      },
+      "userExperience": {
+        "title": "用户体验至上",
+        "description": "优秀的代码对用户是不可见的。他们看到的是流畅、直观的体验。我们关注每一个交互，以确保我们的软件令人愉悦。"
+      },
+      "continuousInnovation": {
+        "title": "持续创新",
+        "description": "技术在进化，我们也在进化。我们不断学习、实验和改进我们的产品，以保持领先地位。"
+      }
+    },
+    "values": {
+      "title": "我们的核心价值观",
+      "quality": {
+        "title": "质量优于数量",
+        "description": "我们相信把事情做对，而不仅仅是做得快。每一行代码都很重要。"
+      },
+      "transparency": {
+        "title": "透明与诚实",
+        "description": "我们与团队、用户和合作伙伴坦诚沟通。没有企业官话，只有真实。"
+      },
+      "challenge": {
+        "title": "拥抱挑战",
+        "description": "困难的问题让我们兴奋。我们将挑战视为创新和成长的机会。"
+      },
+      "community": {
+        "title": "社区贡献",
+        "description": "我们相信通过开源贡献和知识分享来回馈开发者社区。"
+      }
+    },
+    "team": {
+      "title": "由开发者构建，为所有人服务",
+      "description": "我们的团队由热爱代码的充满激情的开发者组成。我们来自不同的背景，但有一个共同的目标：构建树立质量和用户体验新标准的软件。",
+      "techShowcase": "我们精通："
+    },
+    "cta": {
+      "title": "加入我们的旅程",
+      "description": "无论您是用户、开发者还是潜在合作伙伴，我们都很想听到您的声音。",
+      "button": "联系我们"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "让我们联系",
+      "subtitle": "有问题或想一起合作？我们很想听到您的声音。"
+    },
+    "info": {
+      "title": "联系方式",
+      "email": "电子邮件",
+      "emailAddress": "hi@codenav.dev",
+      "responseTime": "响应时间",
+      "responseTimeValue": "24 小时内"
+    },
+    "form": {
+      "fullName": "全名",
+      "fullNamePlaceholder": "张三",
+      "email": "电子邮件地址",
+      "emailPlaceholder": "zhangsan@example.com",
+      "subject": "主题",
+      "subjectPlaceholder": "我们如何帮助您？",
+      "message": "您的消息",
+      "messagePlaceholder": "告诉我们更多关于您的项目或询问...",
+      "sendMessage": "发送消息",
+      "sending": "发送中...",
+      "bookMeeting": "预订日历会议",
+      "successMessage": "谢谢！您的消息已成功发送。",
+      "errorMessage": "哎呀！出了点问题。请重试。"
+    }
+  },
+  "products": {
+    "hero": {
+      "title": "我们的产品",
+      "subtitle": "采用尖端技术构建的创新解决方案"
+    },
+    "myGrammar": {
+      "title": "MyGrammar",
+      "tag": "即将推出",
+      "tagline": "在人工智能的支持下自信写作",
+      "description": "MyGrammar 是一款先进的助手，帮助您修正语法。使用人工智能处理您的请求，帮助用户写出更清晰、更有效的内容。",
+      "features": {
+        "aiSuggestions": "由人工智能提供的语法和风格建议",
+        "payAsYouGo": "按需付费",
+        "multiScene": "多场景支持",
+        "toneOptimization": "语气和清晰度优化",
+        "noAds": "无广告"
+      },
+      "builtWith": "构建技术：",
+      "explore": "探索",
+      "mockup": {
+        "header": "MyGrammar",
+        "sampleText": "您的写作正在增强中...",
+        "suggestion": "建议：考虑使用更主动的语态"
+      }
+    },
+    "trafficTrack": {
+      "title": "TrafficTrack",
+      "tagline": "手机上的实时到达时间",
+      "description": "TrafficTrack 提供香港的实时交通到达时间，数据直接由政府的 API 提供。内部无广告，让您在点击应用后的一秒钟内获得信息。",
+      "features": {
+        "realTimeEta": "实时到达时间",
+        "advancedSettings": "高级用户行为设置",
+        "fastLaunch": "尽可能快速启动",
+        "instantInfo": "第一秒获取信息",
+        "noAds": "无广告"
+      },
+      "builtWith": "构建技术：",
+      "explore": "探索",
+      "mockup": {
+        "header": "TrafficTrack 到达时间",
+        "tracking": "跟踪中",
+        "lines": "线路",
+        "arrivalTime": "到达时间",
+        "min": "分钟"
+      }
+    },
+    "cta": {
+      "title": "准备好转变您的工作流程了吗？",
+      "subtitle": "加入数千名信任 CodeNav 产品的用户",
+      "button": "开始使用"
+    }
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：",
+    "date": "2026年1月4日"
+  },
+  "terms": {
+    "title": "条款与条件",
+    "lastUpdated": "最后更新：",
+    "date": "2026年1月4日"
+  },
+  "support": {
+    "title": "支持",
+    "subtitle": "我们随时为您提供帮助",
+    "intro": "如果您有任何问题或反馈，请使用以下方法之一联系我们。",
+    "email": "电子邮件",
+    "phone": "电话"
+  }
+}

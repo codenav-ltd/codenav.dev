@@ -1,9 +1,9 @@
 <template>
   <div class="products">
     <div class="hero-section">
-      <h1>Our Products</h1>
+      <h1>{{ $t('products.hero.title') }}</h1>
       <p class="subtitle">
-        Innovative solutions built with cutting-edge technology
+        {{ $t('products.hero.subtitle') }}
       </p>
     </div>
 
@@ -12,47 +12,44 @@
         <div class="product-content">
           <div class="product-info">
             <div class="product-header">
-              <h2>MyGrammar</h2>
-              <span class="tag soon">Coming Soon</span>
+              <h2>{{ $t('products.myGrammar.title') }}</h2>
+              <span class="tag soon">{{ $t('products.myGrammar.tag') }}</span>
             </div>
-            <p class="product-tagline">Write with confidence, powered by AI</p>
+            <p class="product-tagline">{{ $t('products.myGrammar.tagline') }}</p>
             <p class="product-description">
-              MyGrammar is an advanced assistant that help you to fix your
-              grammar. Using AI to process your request, it helps users write
-              clearer, more effective content.
+              {{ $t('products.myGrammar.description') }}
             </p>
             <div class="features-list">
               <div class="feature-item">
-                <span class="check">✓</span> Grammar and style suggestions by AI
+                <span class="check">✓</span> {{ $t('products.myGrammar.features.aiSuggestions') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> Pay-as-you-go
+                <span class="check">✓</span> {{ $t('products.myGrammar.features.payAsYouGo') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> Multi scene support
+                <span class="check">✓</span> {{ $t('products.myGrammar.features.multiScene') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> Tone and clarity optimization
+                <span class="check">✓</span> {{ $t('products.myGrammar.features.toneOptimization') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> No-Ads
+                <span class="check">✓</span> {{ $t('products.myGrammar.features.noAds') }}
               </div>
             </div>
             <div class="info-flex">
               <div class="tech-stack">
-                <h4>Built with:</h4>
+                <h4>{{ $t('products.myGrammar.builtWith') }}</h4>
                 <div class="tech-badges">
                   <span class="tech-badge">Swift</span>
                   <span class="tech-badge">iOS</span>
                 </div>
               </div>
               <div class="info-right">
-                <!-- <a class="download">Download on iOS</a> -->
                 <a
                   class="explore-link"
                   href="https://mygrammar.xiaodong.moe/"
                   target="_blank"
-                  >Explore</a
+                  >{{ $t('products.myGrammar.explore') }}</a
                 >
               </div>
             </div>
@@ -60,15 +57,14 @@
           <div class="product-visual">
             <div class="mockup-container">
               <div class="mockup-screen">
-                <div class="mockup-header">MyGrammar</div>
+                <div class="mockup-header">{{ $t('products.myGrammar.mockup.header') }}</div>
                 <div class="mockup-content">
                   <p class="sample-text">
-                    <span class="correction">Your</span> writing is being
-                    enhanced...
+                    <span class="correction">{{ $t('products.myGrammar.mockup.sampleText').split(' ')[0] }}</span> {{ $t('products.myGrammar.mockup.sampleText').split(' ').slice(1).join(' ') }}
                   </p>
                   <div class="suggestion-box">
                     <span class="suggestion-icon">💡</span>
-                    Suggestion: Consider using more active voice
+                    {{ $t('products.myGrammar.mockup.suggestion') }}
                   </div>
                 </div>
               </div>
@@ -82,7 +78,7 @@
           <div class="product-visual">
             <div class="mockup-container">
               <div class="mockup-screen dark">
-                <div class="mockup-header">TrafficTrack ETA</div>
+                <div class="mockup-header">{{ $t('products.trafficTrack.mockup.header') }}</div>
                 <div class="chart-container">
                   <div class="chart-bar" style="height: 60%"></div>
                   <div class="chart-bar" style="height: 80%"></div>
@@ -92,46 +88,43 @@
                 </div>
                 <div class="stats-row">
                   <div class="stat">
-                    <span class="stat-value">47 Lines</span>
-                    <span class="stat-label">Tracking</span>
+                    <span class="stat-value">47 {{ $t('products.trafficTrack.mockup.lines') }}</span>
+                    <span class="stat-label">{{ $t('products.trafficTrack.mockup.tracking') }}</span>
                   </div>
                   <div class="stat">
-                    <span class="stat-value">3.7 min</span>
-                    <span class="stat-label">Arrival Time</span>
+                    <span class="stat-value">3.7 {{ $t('products.trafficTrack.mockup.min') }}</span>
+                    <span class="stat-label">{{ $t('products.trafficTrack.mockup.arrivalTime') }}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="product-info">
-            <h2>TrafficTrack</h2>
-            <p class="product-tagline">Real-time ETA on your Phone</p>
+            <h2>{{ $t('products.trafficTrack.title') }}</h2>
+            <p class="product-tagline">{{ $t('products.trafficTrack.tagline') }}</p>
             <p class="product-description">
-              TrafficTrack provides real-time traffic ETA at Hong Kong, data
-              directly provided by the goverment's API. No Ads inside, let you
-              be able to get the information in one second after you click
-              inside the App.
+              {{ $t('products.trafficTrack.description') }}
             </p>
             <div class="features-list">
               <div class="feature-item">
-                <span class="check">✓</span> Real-time ETA
+                <span class="check">✓</span> {{ $t('products.trafficTrack.features.realTimeEta') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> Advanced user behavior setting
+                <span class="check">✓</span> {{ $t('products.trafficTrack.features.advancedSettings') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> Launch as fast as possible
+                <span class="check">✓</span> {{ $t('products.trafficTrack.features.fastLaunch') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> Get the information at first second
+                <span class="check">✓</span> {{ $t('products.trafficTrack.features.instantInfo') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> No-Ads
+                <span class="check">✓</span> {{ $t('products.trafficTrack.features.noAds') }}
               </div>
             </div>
             <div class="info-flex">
               <div class="tech-stack">
-                <h4>Built with:</h4>
+                <h4>{{ $t('products.trafficTrack.builtWith') }}</h4>
                 <div class="tech-badges">
                   <span class="tech-badge">Swift</span>
                   <span class="tech-badge">iOS</span>
@@ -141,7 +134,7 @@
                 class="explore-link"
                 href="https://traffictrack.xiaodong.moe/"
                 target="_blank"
-                >Explore</a
+                >{{ $t('products.trafficTrack.explore') }}</a
               >
             </div>
           </div>
@@ -150,9 +143,9 @@
     </section>
 
     <section class="cta-section">
-      <h2>Ready to Transform Your Workflow?</h2>
-      <p>Join thousands of users who trust CodeNav Tech products</p>
-      <router-link to="/contact" class="cta-button">Get Started</router-link>
+      <h2>{{ $t('products.cta.title') }}</h2>
+      <p>{{ $t('products.cta.subtitle') }}</p>
+      <router-link to="/contact" class="cta-button">{{ $t('products.cta.button') }}</router-link>
     </section>
   </div>
 </template>

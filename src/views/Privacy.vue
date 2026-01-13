@@ -1,8 +1,8 @@
 <template>
   <div class="privacy-policy">
     <div class="hero-section">
-      <h1>Privacy Policy</h1>
-      <p class="last-updated"><strong>Last updated:</strong> January 4, 2026</p>
+      <h1>{{ $t('privacy.title') }}</h1>
+      <p class="last-updated"><strong>{{ $t('privacy.lastUpdated') }}</strong> {{ $t('privacy.date') }}</p>
     </div>
 
     <div class="content-section">

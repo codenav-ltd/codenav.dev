@@ -1,22 +1,22 @@
 <template>
   <div class="support-page">
     <div class="hero-section">
-      <h1>Support</h1>
-      <p class="subtitle">We're here to help</p>
+      <h1>{{ $t('support.title') }}</h1>
+      <p class="subtitle">{{ $t('support.subtitle') }}</p>
     </div>
 
     <div class="content-section">
       <div class="container">
         <p>
-          If you have any questions or feedback, use one of the following methods to contact us.
+          {{ $t('support.intro') }}
         </p>
 
-        <h2>Email</h2>
+        <h2>{{ $t('support.email') }}</h2>
         <p>
           <a href="mailto:support@codenav.dev">support@codenav.dev</a>
         </p>
 
-        <h2>Phone</h2>
+        <h2>{{ $t('support.phone') }}</h2>
         <p>
           <a href="tel:+12408668085">+1 (240) 866-8085</a>
         </p>

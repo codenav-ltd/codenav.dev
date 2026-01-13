@@ -7,13 +7,16 @@
           <span class="logo-code">Code</span><span class="logo-nav">Nav</span>
         </router-link>
         <nav class="nav-links">
-          <router-link to="/">Home</router-link>
-          <router-link to="/products">Products</router-link>
-          <router-link to="/about">About</router-link>
-          <router-link to="/tech-stack">Tech Stack</router-link>
-          <router-link to="/contact">Contact</router-link>
+          <router-link to="/">{{ $t('nav.home') }}</router-link>
+          <router-link to="/products">{{ $t('nav.products') }}</router-link>
+          <router-link to="/about">{{ $t('nav.about') }}</router-link>
+          <router-link to="/tech-stack">{{ $t('nav.techStack') }}</router-link>
+          <router-link to="/contact">{{ $t('nav.contact') }}</router-link>
           <div class="btn-container">
-            <a target="_blank" href="https://sso.codenav.dev" class="sso-btn">Sign In</a>
+            <button @click="toggleLanguage" class="lang-btn" :title="locale === 'en' ? '切换到中文' : 'Switch to English'">
+              {{ locale === 'en' ? '中文' : 'EN' }}
+            </button>
+            <a target="_blank" href="https://sso.codenav.dev" class="sso-btn">{{ $t('nav.signIn') }}</a>
           </div>
         </nav>
         <button class="mobile-menu-btn" @click="toggleMobileMenu">
@@ -23,11 +26,11 @@
         </button>
       </div>
       <nav class="mobile-nav" v-if="mobileMenuOpen">
-        <router-link to="/" @click="closeMobileMenu">Home</router-link>
-        <router-link to="/products" @click="closeMobileMenu">Products</router-link>
-        <router-link to="/about" @click="closeMobileMenu">About</router-link>
-        <router-link to="/tech-stack" @click="closeMobileMenu">Tech Stack</router-link>
-        <router-link to="/contact" @click="closeMobileMenu">Contact</router-link>
+        <router-link to="/" @click="closeMobileMenu">{{ $t('nav.home') }}</router-link>
+        <router-link to="/products" @click="closeMobileMenu">{{ $t('nav.products') }}</router-link>
+        <router-link to="/about" @click="closeMobileMenu">{{ $t('nav.about') }}</router-link>
+        <router-link to="/tech-stack" @click="closeMobileMenu">{{ $t('nav.techStack') }}</router-link>
+        <router-link to="/contact" @click="closeMobileMenu">{{ $t('nav.contact') }}</router-link>
       </nav>
     </header>
     <router-view v-slot="{ Component }">
@@ -39,17 +42,17 @@
       <div class="footer-content">
         <div class="company-logo">
           <Logo :black="false" class="logo" />
-          <span>CodeNav</span>
+          <span>{{ $t('footer.company') }}</span>
         </div>
-        <p>&copy; 2025 CodeNav Technology Ltd. All rights reserved.</p>
-        <p class="footer-tagline">Building Tomorrow's Software Today</p>
+        <p>{{ $t('footer.copyright') }}</p>
+        <p class="footer-tagline">{{ $t('footer.tagline') }}</p>
         <div class="footer-links">
-          <router-link to="/privacy">Privacy Policy</router-link>
+          <router-link to="/privacy">{{ $t('footer.privacyPolicy') }}</router-link>
           <span class="separator">•</span>
-          <router-link to="/terms">Terms & Conditions</router-link>
+          <router-link to="/terms">{{ $t('footer.termsConditions') }}</router-link>
           <template v-if="isConavTech">
             <span class="separator">•</span>
-            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">粤ICP备2026004131号-1</a>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">{{ $t('footer.icpRecord') }}</a>
           </template>
         </div>
       </div>
@@ -59,7 +62,10 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
+import { useI18n } from "vue-i18n";
 import Logo from "./components/logo.vue";
+
+const { locale } = useI18n();
 
 const mobileMenuOpen = ref(false);
 
@@ -69,6 +75,11 @@ const toggleMobileMenu = () => {
 
 const closeMobileMenu = () => {
   mobileMenuOpen.value = false;
+};
+
+const toggleLanguage = () => {
+  locale.value = locale.value === 'en' ? 'zh-CN' : 'en';
+  localStorage.setItem('language', locale.value);
 };
 
 // Check if the current domain is conav.tech
@@ -110,6 +121,7 @@ const isConavTech = computed(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 68px;
 }
 
 .logo {
@@ -146,6 +158,7 @@ const isConavTech = computed(() => {
   display: flex;
   align-items: center;
   gap: 2rem;
+  flex-wrap: nowrap;
 
   a:not(.sso-btn) {
     color: #555;
@@ -153,6 +166,7 @@ const isConavTech = computed(() => {
     font-weight: 500;
     transition: all 0.3s;
     position: relative;
+    white-space: nowrap;
 
     &::after {
       content: "";
@@ -182,6 +196,24 @@ const isConavTech = computed(() => {
   gap: 1rem;
 }
 
+.lang-btn {
+  background: transparent;
+  border: 2px solid #000000;
+  color: #000000;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #000000;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
 .contact-btn {
   background: linear-gradient(135deg, #858585 0%, #000000 100%);
   color: white !important;
@@ -204,6 +236,7 @@ const isConavTech = computed(() => {
   color: white !important;
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
+  border: 2px solid #000000;
   transition: transform 0.3s, box-shadow 0.3s !important;
   text-decoration: none !important;
 

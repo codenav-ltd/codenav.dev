@@ -1,0 +1,214 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "techStack": "Tech Stack",
+    "contact": "Contact",
+    "signIn": "Sign In"
+  },
+  "footer": {
+    "company": "CodeNav",
+    "copyright": "© 2025 CodeNav Technology Ltd. All rights reserved.",
+    "tagline": "Building Tomorrow's Software Today",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "icpRecord": "粤ICP备2026004131号-1"
+  },
+  "home": {
+    "hero": {
+      "title": "CodeNav Tech",
+      "tagline": "Building Tomorrow's Software Today",
+      "subtitle": "Developer-Led Innovation • Cutting-Edge Technology • User-First Design",
+      "exploreProducts": "Explore Our Products"
+    },
+    "features": {
+      "title": "Why CodeNav Tech?",
+      "developerLed": {
+        "title": "Developer-Led",
+        "description": "Founded and run by developers who understand what great software needs"
+      },
+      "latestTech": {
+        "title": "Latest Tech Stack",
+        "description": "We use and master the newest, most efficient technologies available"
+      },
+      "userCentric": {
+        "title": "User-Centric",
+        "description": "Every line of code is written with the end user's experience in mind"
+      },
+      "innovationFirst": {
+        "title": "Innovation First",
+        "description": "Pushing boundaries and creating solutions that define the future"
+      }
+    },
+    "productsPreview": {
+      "title": "Our Products",
+      "myGrammar": {
+        "title": "MyGrammar",
+        "description": "Advanced grammar checking and writing enhancement tool powered by AI",
+        "learnMore": "Learn More →"
+      },
+      "trafficTrack": {
+        "title": "TrafficTrack",
+        "description": "Real-time traffic analytics and optimization platform for modern businesses",
+        "learnMore": "Learn More →"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About CodeNav Tech",
+      "subtitle": "Where Developers Lead Innovation"
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "CodeNav Technology Co., Ltd. was born from a simple belief: the best software is built by developers who truly understand both code and users. As a company fully led by developers, we bring a unique perspective to every project we undertake.",
+      "paragraph2": "We don't just write code; we craft experiences. We don't just use technology; we push its boundaries. Every member of our team is passionate about creating software that makes a real difference in how people work and live."
+    },
+    "philosophy": {
+      "title": "Our Philosophy",
+      "developerFirst": {
+        "title": "Developer-First Thinking",
+        "description": "We understand the challenges developers face because we face them too. This drives us to create tools and solutions that we ourselves would love to use."
+      },
+      "bleedingEdge": {
+        "title": "Bleeding-Edge Technology",
+        "description": "We're not afraid to adopt the newest technologies. If it makes our products better, faster, or more enjoyable to use, we'll learn it, master it, and implement it."
+      },
+      "userExperience": {
+        "title": "User Experience is Everything",
+        "description": "Great code is invisible to users. What they see is a smooth, intuitive experience. We obsess over every interaction to ensure our software delights."
+      },
+      "continuousInnovation": {
+        "title": "Continuous Innovation",
+        "description": "Technology evolves, and so do we. We're constantly learning, experimenting, and improving our products to stay ahead of the curve."
+      }
+    },
+    "values": {
+      "title": "Our Core Values",
+      "quality": {
+        "title": "Quality Over Quantity",
+        "description": "We believe in doing things right, not just doing them fast. Every line of code matters."
+      },
+      "transparency": {
+        "title": "Transparency & Honesty",
+        "description": "We communicate openly with our team, our users, and our partners. No corporate speak, just truth."
+      },
+      "challenge": {
+        "title": "Embrace the Challenge",
+        "description": "Difficult problems excite us. We see challenges as opportunities to innovate and grow."
+      },
+      "community": {
+        "title": "Community Contribution",
+        "description": "We believe in giving back to the developer community through open-source contributions and knowledge sharing."
+      }
+    },
+    "team": {
+      "title": "Built by Developers, For Everyone",
+      "description": "Our team consists of passionate developers who live and breathe code. We come from diverse backgrounds but share a common goal: to build software that sets new standards for quality and user experience.",
+      "techShowcase": "We're fluent in:"
+    },
+    "cta": {
+      "title": "Join Us on Our Journey",
+      "description": "Whether you're a user, a developer, or a potential partner, we'd love to hear from you.",
+      "button": "Get in Touch"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Let's Connect",
+      "subtitle": "Have a question or want to work together? We'd love to hear from you."
+    },
+    "info": {
+      "title": "Get in Touch",
+      "email": "Email",
+      "emailAddress": "hi@codenav.dev",
+      "responseTime": "Response Time",
+      "responseTimeValue": "Within 24 hours"
+    },
+    "form": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "John Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "john@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help you?",
+      "message": "Your Message",
+      "messagePlaceholder": "Tell us more about your project or inquiry...",
+      "sendMessage": "Send Message",
+      "sending": "Sending...",
+      "bookMeeting": "Book a Cal Meeting",
+      "successMessage": "Thank you! Your message has been sent successfully.",
+      "errorMessage": "Oops! Something went wrong. Please try again."
+    }
+  },
+  "products": {
+    "hero": {
+      "title": "Our Products",
+      "subtitle": "Innovative solutions built with cutting-edge technology"
+    },
+    "myGrammar": {
+      "title": "MyGrammar",
+      "tag": "Coming Soon",
+      "tagline": "Write with confidence, powered by AI",
+      "description": "MyGrammar is an advanced assistant that help you to fix your grammar. Using AI to process your request, it helps users write clearer, more effective content.",
+      "features": {
+        "aiSuggestions": "Grammar and style suggestions by AI",
+        "payAsYouGo": "Pay-as-you-go",
+        "multiScene": "Multi scene support",
+        "toneOptimization": "Tone and clarity optimization",
+        "noAds": "No-Ads"
+      },
+      "builtWith": "Built with:",
+      "explore": "Explore",
+      "mockup": {
+        "header": "MyGrammar",
+        "sampleText": "Your writing is being enhanced...",
+        "suggestion": "Suggestion: Consider using more active voice"
+      }
+    },
+    "trafficTrack": {
+      "title": "TrafficTrack",
+      "tagline": "Real-time ETA on your Phone",
+      "description": "TrafficTrack provides real-time traffic ETA at Hong Kong, data directly provided by the goverment's API. No Ads inside, let you be able to get the information in one second after you click inside the App.",
+      "features": {
+        "realTimeEta": "Real-time ETA",
+        "advancedSettings": "Advanced user behavior setting",
+        "fastLaunch": "Launch as fast as possible",
+        "instantInfo": "Get the information at first second",
+        "noAds": "No-Ads"
+      },
+      "builtWith": "Built with:",
+      "explore": "Explore",
+      "mockup": {
+        "header": "TrafficTrack ETA",
+        "tracking": "Tracking",
+        "lines": "Lines",
+        "arrivalTime": "Arrival Time",
+        "min": "min"
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Workflow?",
+      "subtitle": "Join thousands of users who trust CodeNav Tech products",
+      "button": "Get Started"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated:",
+    "date": "January 4, 2026"
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "lastUpdated": "Last updated:",
+    "date": "January 4, 2026"
+  },
+  "support": {
+    "title": "Support",
+    "subtitle": "We're here to help",
+    "intro": "If you have any questions or feedback, use one of the following methods to contact us.",
+    "email": "Email",
+    "phone": "Phone"
+  }
+}

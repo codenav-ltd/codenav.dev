@@ -1,66 +1,52 @@
 <template>
   <div class="about">
     <div class="hero-section">
-      <h1>About CodeNav Tech</h1>
-      <p class="subtitle">Where Developers Lead Innovation</p>
+      <h1>{{ $t('about.hero.title') }}</h1>
+      <p class="subtitle">{{ $t('about.hero.subtitle') }}</p>
     </div>
 
     <section class="story-section">
       <div class="container">
-        <h2>Our Story</h2>
+        <h2>{{ $t('about.story.title') }}</h2>
         <p class="story-text">
-          CodeNav Technology Co., Ltd. was born from a simple belief: the best
-          software is built by developers who truly understand both code and
-          users. As a company fully led by developers, we bring a unique
-          perspective to every project we undertake.
+          {{ $t('about.story.paragraph1') }}
         </p>
         <p class="story-text">
-          We don't just write code; we craft experiences. We don't just use
-          technology; we push its boundaries. Every member of our team is
-          passionate about creating software that makes a real difference in how
-          people work and live.
+          {{ $t('about.story.paragraph2') }}
         </p>
       </div>
     </section>
 
     <section class="philosophy-section">
       <div class="container">
-        <h2>Our Philosophy</h2>
+        <h2>{{ $t('about.philosophy.title') }}</h2>
         <div class="philosophy-grid">
           <div class="philosophy-card">
             <div class="icon">🎯</div>
-            <h3>Developer-First Thinking</h3>
+            <h3>{{ $t('about.philosophy.developerFirst.title') }}</h3>
             <p>
-              We understand the challenges developers face because we face them
-              too. This drives us to create tools and solutions that we
-              ourselves would love to use.
+              {{ $t('about.philosophy.developerFirst.description') }}
             </p>
           </div>
           <div class="philosophy-card">
             <div class="icon">🚀</div>
-            <h3>Bleeding-Edge Technology</h3>
+            <h3>{{ $t('about.philosophy.bleedingEdge.title') }}</h3>
             <p>
-              We're not afraid to adopt the newest technologies. If it makes our
-              products better, faster, or more enjoyable to use, we'll learn it,
-              master it, and implement it.
+              {{ $t('about.philosophy.bleedingEdge.description') }}
             </p>
           </div>
           <div class="philosophy-card">
             <div class="icon">💡</div>
-            <h3>User Experience is Everything</h3>
+            <h3>{{ $t('about.philosophy.userExperience.title') }}</h3>
             <p>
-              Great code is invisible to users. What they see is a smooth,
-              intuitive experience. We obsess over every interaction to ensure
-              our software delights.
+              {{ $t('about.philosophy.userExperience.description') }}
             </p>
           </div>
           <div class="philosophy-card">
             <div class="icon">🔄</div>
-            <h3>Continuous Innovation</h3>
+            <h3>{{ $t('about.philosophy.continuousInnovation.title') }}</h3>
             <p>
-              Technology evolves, and so do we. We're constantly learning,
-              experimenting, and improving our products to stay ahead of the
-              curve.
+              {{ $t('about.philosophy.continuousInnovation.description') }}
             </p>
           </div>
         </div>
@@ -69,45 +55,41 @@
 
     <section class="values-section">
       <div class="container">
-        <h2>Our Core Values</h2>
+        <h2>{{ $t('about.values.title') }}</h2>
         <div class="values-list">
           <div class="value-item">
             <span class="value-number">01</span>
             <div class="value-content">
-              <h3>Quality Over Quantity</h3>
+              <h3>{{ $t('about.values.quality.title') }}</h3>
               <p>
-                We believe in doing things right, not just doing them fast.
-                Every line of code matters.
+                {{ $t('about.values.quality.description') }}
               </p>
             </div>
           </div>
           <div class="value-item">
             <span class="value-number">02</span>
             <div class="value-content">
-              <h3>Transparency & Honesty</h3>
+              <h3>{{ $t('about.values.transparency.title') }}</h3>
               <p>
-                We communicate openly with our team, our users, and our
-                partners. No corporate speak, just truth.
+                {{ $t('about.values.transparency.description') }}
               </p>
             </div>
           </div>
           <div class="value-item">
             <span class="value-number">03</span>
             <div class="value-content">
-              <h3>Embrace the Challenge</h3>
+              <h3>{{ $t('about.values.challenge.title') }}</h3>
               <p>
-                Difficult problems excite us. We see challenges as opportunities
-                to innovate and grow.
+                {{ $t('about.values.challenge.description') }}
               </p>
             </div>
           </div>
           <div class="value-item">
             <span class="value-number">04</span>
             <div class="value-content">
-              <h3>Community Contribution</h3>
+              <h3>{{ $t('about.values.community.title') }}</h3>
               <p>
-                We believe in giving back to the developer community through
-                open-source contributions and knowledge sharing.
+                {{ $t('about.values.community.description') }}
               </p>
             </div>
           </div>
@@ -117,14 +99,12 @@
 
     <section class="team-section">
       <div class="container">
-        <h2>Built by Developers, For Everyone</h2>
+        <h2>{{ $t('about.team.title') }}</h2>
         <p class="team-description">
-          Our team consists of passionate developers who live and breathe code.
-          We come from diverse backgrounds but share a common goal: to build
-          software that sets new standards for quality and user experience.
+          {{ $t('about.team.description') }}
         </p>
         <div class="tech-showcase">
-          <p>We're fluent in:</p>
+          <p>{{ $t('about.team.techShowcase') }}</p>
           <div class="tech-grid">
             <span class="tech-item">TypeScript</span>
             <span class="tech-item">Swift</span>
@@ -141,12 +121,11 @@
 
     <section class="cta-section">
       <div class="container">
-        <h2>Join Us on Our Journey</h2>
+        <h2>{{ $t('about.cta.title') }}</h2>
         <p>
-          Whether you're a user, a developer, or a potential partner, we'd love
-          to hear from you.
+          {{ $t('about.cta.description') }}
         </p>
-        <router-link to="/contact" class="cta-button">Get in Touch</router-link>
+        <router-link to="/contact" class="cta-button">{{ $t('about.cta.button') }}</router-link>
       </div>
     </section>
   </div>

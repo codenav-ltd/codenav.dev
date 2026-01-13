@@ -5,20 +5,14 @@
         <h1 class="company-name">
           <span class="code">Code</span><span class="nav">Nav</span> Tech
         </h1>
-        <p class="tagline">Building Tomorrow's Software Today</p>
+        <p class="tagline">{{ $t('home.hero.tagline') }}</p>
         <p class="subtitle">
-          Developer-Led Innovation • Cutting-Edge Technology • User-First Design
+          {{ $t('home.hero.subtitle') }}
         </p>
         <div class="cta-buttons">
-          <router-link to="/products" class="btn btn-primary">Explore Our Products</router-link>
-          <!-- <router-link to="/tech-stack" class="btn btn-secondary">Our Tech Stack</router-link> -->
+          <router-link to="/products" class="btn btn-primary">{{ $t('home.hero.exploreProducts') }}</router-link>
         </div>
       </div>
-      <!-- <div class="hero-animation">
-        <div class="code-block">
-          <pre><code>{{ codeAnimation }}</code></pre>
-        </div>
-      </div> -->
       <div class="hero-image">
         <logo :black="false" :width="500" :height="500" class="logo-image" />
       </div>
@@ -26,37 +20,34 @@
 
     <section class="features">
       <div class="container">
-        <h2>Why CodeNav Tech?</h2>
+        <h2>{{ $t('home.features.title') }}</h2>
         <div class="feature-grid">
           <div class="feature-card">
             <div class="icon">🚀</div>
-            <h3>Developer-Led</h3>
+            <h3>{{ $t('home.features.developerLed.title') }}</h3>
             <p>
-              Founded and run by developers who understand what great software
-              needs
+              {{ $t('home.features.developerLed.description') }}
             </p>
           </div>
           <div class="feature-card">
             <div class="icon">⚡</div>
-            <h3>Latest Tech Stack</h3>
+            <h3>{{ $t('home.features.latestTech.title') }}</h3>
             <p>
-              We use and master the newest, most efficient technologies
-              available
+              {{ $t('home.features.latestTech.description') }}
             </p>
           </div>
           <div class="feature-card">
             <div class="icon">👥</div>
-            <h3>User-Centric</h3>
+            <h3>{{ $t('home.features.userCentric.title') }}</h3>
             <p>
-              Every line of code is written with the end user's experience in
-              mind
+              {{ $t('home.features.userCentric.description') }}
             </p>
           </div>
           <div class="feature-card">
             <div class="icon">✨</div>
-            <h3>Innovation First</h3>
+            <h3>{{ $t('home.features.innovationFirst.title') }}</h3>
             <p>
-              Pushing boundaries and creating solutions that define the future
+              {{ $t('home.features.innovationFirst.description') }}
             </p>
           </div>
         </div>
@@ -65,23 +56,21 @@
 
     <section class="products-preview">
       <div class="container">
-        <h2>Our Products</h2>
+        <h2>{{ $t('home.productsPreview.title') }}</h2>
         <div class="products-grid">
           <div class="product-card mygrammar">
-            <h3>MyGrammar</h3>
+            <h3>{{ $t('home.productsPreview.myGrammar.title') }}</h3>
             <p>
-              Advanced grammar checking and writing enhancement tool powered by
-              AI
+              {{ $t('home.productsPreview.myGrammar.description') }}
             </p>
-            <router-link to="/products" class="learn-more">Learn More →</router-link>
+            <router-link to="/products" class="learn-more">{{ $t('home.productsPreview.myGrammar.learnMore') }}</router-link>
           </div>
           <div class="product-card traffictrack">
-            <h3>TrafficTrack</h3>
+            <h3>{{ $t('home.productsPreview.trafficTrack.title') }}</h3>
             <p>
-              Real-time traffic analytics and optimization platform for modern
-              businesses
+              {{ $t('home.productsPreview.trafficTrack.description') }}
             </p>
-            <router-link to="/products" class="learn-more">Learn More →</router-link>
+            <router-link to="/products" class="learn-more">{{ $t('home.productsPreview.trafficTrack.learnMore') }}</router-link>
           </div>
         </div>
       </div>
@@ -90,7 +79,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import Logo from "../components/logo.vue";
 </script>
 

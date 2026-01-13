@@ -1,15 +1,15 @@
 <template>
   <div class="contact-container">
     <div class="contact-hero">
-      <h1>Let's Connect</h1>
+      <h1>{{ $t('contact.hero.title') }}</h1>
       <p>
-        Have a question or want to work together? We'd love to hear from you.
+        {{ $t('contact.hero.subtitle') }}
       </p>
     </div>
 
     <div class="contact-content">
       <div class="contact-info">
-        <h2>Get in Touch</h2>
+        <h2>{{ $t('contact.info.title') }}</h2>
         <div class="info-item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2">
@@ -17,8 +17,8 @@
               d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
           <div>
-            <h3>Email</h3>
-            <p>hi@codenav.dev</p>
+            <h3>{{ $t('contact.info.email') }}</h3>
+            <p>{{ $t('contact.info.emailAddress') }}</p>
           </div>
         </div>
         <div class="info-item">
@@ -28,8 +28,8 @@
             <polyline points="12 6 12 12 16 14" />
           </svg>
           <div>
-            <h3>Response Time</h3>
-            <p>Within 24 hours</p>
+            <h3>{{ $t('contact.info.responseTime') }}</h3>
+            <p>{{ $t('contact.info.responseTimeValue') }}</p>
           </div>
         </div>
       </div>
@@ -46,31 +46,31 @@
       <form @submit.prevent="handleSubmit" class="contact-form" v-if="true">
         <div class="form-row">
           <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" v-model="formData.name" placeholder="John Doe"
+            <label for="name">{{ $t('contact.form.fullName') }}</label>
+            <input type="text" id="name" v-model="formData.name" :placeholder="$t('contact.form.fullNamePlaceholder')"
               :class="{ 'has-value': formData.name }" required />
           </div>
           <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" v-model="formData.email" placeholder="john@example.com"
+            <label for="email">{{ $t('contact.form.email') }}</label>
+            <input type="email" id="email" v-model="formData.email" :placeholder="$t('contact.form.emailPlaceholder')"
               :class="{ 'has-value': formData.email }" required />
           </div>
         </div>
 
         <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" v-model="formData.subject" placeholder="How can we help you?"
+          <label for="subject">{{ $t('contact.form.subject') }}</label>
+          <input type="text" id="subject" v-model="formData.subject" :placeholder="$t('contact.form.subjectPlaceholder')"
             :class="{ 'has-value': formData.subject }" required />
         </div>
 
         <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" v-model="formData.message" placeholder="Tell us more about your project or inquiry..."
+          <label for="message">{{ $t('contact.form.message') }}</label>
+          <textarea id="message" v-model="formData.message" :placeholder="$t('contact.form.messagePlaceholder')"
             :class="{ 'has-value': formData.message }" rows="6" required></textarea>
         </div>
 
         <button type="submit" class="submit-btn" :disabled="isSubmitting">
-          <span v-if="!isSubmitting">Send Message</span>
+          <span v-if="!isSubmitting">{{ $t('contact.form.sendMessage') }}</span>
           <span v-else class="loading">
             <svg class="spinner" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none"
@@ -78,12 +78,11 @@
                 <animate attributeName="stroke-dashoffset" dur="1s" repeatCount="indefinite" from="31.416" to="0" />
               </circle>
             </svg>
-            Sending...
+            {{ $t('contact.form.sending') }}
           </span>
         </button>
 
-        <a href="https://cal.com/xiaodong2008/busniess" target="_blank" class="cal-btn">Book a Cal
-          Meeting</a>
+        <a href="https://cal.com/xiaodong2008/busniess" target="_blank" class="cal-btn">{{ $t('contact.form.bookMeeting') }}</a>
 
         <div v-if="statusMessage" :class="['status-message', statusType]">
           {{ statusMessage }}
@@ -95,6 +94,9 @@
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const formData = reactive({
   name: "",
@@ -126,7 +128,7 @@ const handleSubmit = async () => {
       throw new Error(data.message || "Failed to send message");
     }
 
-    statusMessage.value = "Thank you! Your message has been sent successfully.";
+    statusMessage.value = t('contact.form.successMessage');
     statusType.value = "success";
 
     Object.keys(formData).forEach((key) => {
@@ -134,7 +136,7 @@ const handleSubmit = async () => {
     });
   } catch (error) {
     console.error("Error submitting form:", error);
-    statusMessage.value = error instanceof Error ? error.message : "Oops! Something went wrong. Please try again.";
+    statusMessage.value = error instanceof Error ? error.message : t('contact.form.errorMessage');
     statusType.value = "error";
   } finally {
     isSubmitting.value = false;
