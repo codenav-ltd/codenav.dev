@@ -140,6 +140,78 @@
           </div>
         </div>
       </div>
+
+      <div class="product livemumu-section">
+        <div class="product-content">
+          <div class="product-info">
+            <div class="product-header">
+              <h2>{{ $t('products.livemumu.title') }}</h2>
+              <span class="tag available">{{ $t('products.livemumu.tag') }}</span>
+            </div>
+            <p class="product-tagline">{{ $t('products.livemumu.tagline') }}</p>
+            <p class="product-description">
+              {{ $t('products.livemumu.description') }}
+            </p>
+            <div class="features-list">
+              <div class="feature-item">
+                <span class="check">✓</span> {{ $t('products.livemumu.features.oneClick') }}
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span> {{ $t('products.livemumu.features.smartAlerts') }}
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span> {{ $t('products.livemumu.features.flexible') }}
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span> {{ $t('products.livemumu.features.multiContact') }}
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span> {{ $t('products.livemumu.features.bilingual') }}
+              </div>
+            </div>
+            <div class="info-flex">
+              <div class="tech-stack">
+                <h4>{{ $t('products.livemumu.builtWith') }}</h4>
+                <div class="tech-badges">
+                  <span class="tech-badge">Swift</span>
+                  <span class="tech-badge">iOS</span>
+                </div>
+              </div>
+              <div class="info-right">
+                <a
+                  class="explore-link"
+                  href="https://apps.apple.com/app/livemumu/id6740096547"
+                  target="_blank"
+                  >{{ $t('products.livemumu.download') }}</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="product-visual">
+            <div class="mockup-container">
+              <div class="mockup-screen safety">
+                <div class="mockup-header">{{ $t('products.livemumu.mockup.header') }}</div>
+                <div class="safety-content">
+                  <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">{{ $t('products.livemumu.mockup.status') }}</span>
+                  </div>
+                  <div class="next-checkin">
+                    <span class="label">{{ $t('products.livemumu.mockup.nextCheckIn') }}</span>
+                    <span class="time">2h 30m</span>
+                  </div>
+                  <button class="alive-button">
+                    {{ $t('products.livemumu.mockup.button') }}
+                  </button>
+                  <div class="contacts-count">
+                    <span>3 {{ $t('products.livemumu.mockup.contacts') }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="cta-section">
@@ -270,6 +342,96 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
   .product-info h2 {
     @include gradient-text($secondary-gradient);
   }
+}
+
+.livemumu-section {
+  .product-info h2 {
+    @include gradient-text(linear-gradient(135deg, #42b883 0%, #35495e 100%));
+  }
+
+  .tag.available {
+    border: 2px solid #42b883;
+    color: #42b883;
+  }
+}
+
+.safety-content {
+  padding: 1.5rem 0;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+
+  .status-dot {
+    width: 12px;
+    height: 12px;
+    background: #42b883;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  .status-text {
+    font-weight: 600;
+    color: #42b883;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.next-checkin {
+  background: #f0f9ff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .label {
+    color: $text-light;
+    font-size: 0.9rem;
+  }
+
+  .time {
+    font-weight: bold;
+    color: $text-dark;
+    font-size: 1.1rem;
+  }
+}
+
+.alive-button {
+  width: 100%;
+  background: linear-gradient(135deg, #42b883 0%, #35495e 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(66, 184, 131, 0.3);
+  }
+}
+
+.contacts-count {
+  text-align: center;
+  color: $text-light;
+  font-size: 0.9rem;
 }
 
 .product-tagline {

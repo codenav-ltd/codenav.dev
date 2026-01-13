@@ -52,6 +52,11 @@
         "title": "TrafficTrack",
         "description": "Real-time traffic analytics and optimization platform for modern businesses",
         "learnMore": "Learn More →"
+      },
+      "livemumu": {
+        "title": "Livemumu",
+        "description": "Smart safety verification app that keeps you connected with loved ones through automated check-ins",
+        "learnMore": "Learn More →"
       }
     }
   },
@@ -186,6 +191,29 @@
         "lines": "Lines",
         "arrivalTime": "Arrival Time",
         "min": "min"
+      }
+    },
+    "livemumu": {
+      "title": "Livemumu",
+      "tag": "Available Now",
+      "tagline": "Peace of Mind, One Click Away",
+      "description": "Livemumu is a smart safety verification app that helps you stay connected with loved ones through simple periodic check-ins. Press the 'I'm Alive' button to confirm you're safe. If you miss a check-in, your emergency contacts are automatically notified—giving everyone peace of mind.",
+      "features": {
+        "oneClick": "Simple one-tap check-ins",
+        "smartAlerts": "Automatic emergency notifications via email and SMS",
+        "flexible": "Customizable check-in frequency and alert delays",
+        "multiContact": "Unlimited emergency contacts with priority ordering",
+        "bilingual": "Available in English and Simplified Chinese"
+      },
+      "builtWith": "Built with:",
+      "explore": "Explore",
+      "download": "Download on App Store",
+      "mockup": {
+        "header": "Livemumu Safety Check",
+        "status": "Active",
+        "nextCheckIn": "Next Check-in",
+        "contacts": "Emergency Contacts",
+        "button": "I'm Alive"
       }
     },
     "cta": {

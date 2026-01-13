@@ -72,6 +72,13 @@
             </p>
             <router-link to="/products" class="learn-more">{{ $t('home.productsPreview.trafficTrack.learnMore') }}</router-link>
           </div>
+          <div class="product-card livemumu">
+            <h3>{{ $t('home.productsPreview.livemumu.title') }}</h3>
+            <p>
+              {{ $t('home.productsPreview.livemumu.description') }}
+            </p>
+            <router-link to="/products" class="learn-more">{{ $t('home.productsPreview.livemumu.learnMore') }}</router-link>
+          </div>
         </div>
       </div>
     </section>
@@ -325,6 +332,10 @@ $mobile-breakpoint: 768px;
 
   &.traffictrack {
     background: $secondary-gradient;
+  }
+
+  &.livemumu {
+    background: linear-gradient(135deg, #42b883 0%, #35495e 100%);
   }
 
   &:hover {

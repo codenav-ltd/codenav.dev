@@ -52,6 +52,11 @@
         "title": "TrafficTrack",
         "description": "为香港用户提供的实时到达时间应用",
         "learnMore": "了解更多 →"
+      },
+      "livemumu": {
+        "title": "活了么",
+        "description": "智能安全验证应用，通过自动签到让您与亲人保持联系",
+        "learnMore": "了解更多 →"
       }
     }
   },
@@ -186,6 +191,29 @@
         "lines": "线路",
         "arrivalTime": "到达时间",
         "min": "分钟"
+      }
+    },
+    "livemumu": {
+      "title": "活了么",
+      "tag": "现已上线",
+      "tagline": "一键安心",
+      "description": "活了么是一款智能安全验证应用，通过简单的定期签到帮助您与亲人保持联系。按下「我还活着」按钮确认您的安全。如果您错过签到，您的紧急联系人将自动收到通知——让每个人都安心。",
+      "features": {
+        "oneClick": "简单的一键签到",
+        "smartAlerts": "通过电子邮件和短信自动发送紧急通知",
+        "flexible": "可自定义签到频率和警报延迟",
+        "multiContact": "无限紧急联系人，支持优先级排序",
+        "bilingual": "提供英文和简体中文版本"
+      },
+      "builtWith": "构建技术：",
+      "explore": "探索",
+      "download": "在 App Store 下载",
+      "mockup": {
+        "header": "活了么安全检查",
+        "status": "活跃",
+        "nextCheckIn": "下次签到",
+        "contacts": "紧急联系人",
+        "button": "我还活着"
       }
     },
     "cta": {
