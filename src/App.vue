@@ -47,6 +47,10 @@
           <router-link to="/privacy">Privacy Policy</router-link>
           <span class="separator">•</span>
           <router-link to="/terms">Terms & Conditions</router-link>
+          <template v-if="isConavTech">
+            <span class="separator">•</span>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">粤ICP备2026004131号-1</a>
+          </template>
         </div>
       </div>
     </footer>
@@ -54,7 +58,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import Logo from "./components/logo.vue";
 
 const mobileMenuOpen = ref(false);
@@ -66,6 +70,11 @@ const toggleMobileMenu = () => {
 const closeMobileMenu = () => {
   mobileMenuOpen.value = false;
 };
+
+// Check if the current domain is conav.tech
+const isConavTech = computed(() => {
+  return window.location.hostname === 'conav.tech';
+});
 </script>
 
 <style lang="scss">
