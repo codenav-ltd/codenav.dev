@@ -18,7 +18,7 @@
           </svg>
           <div>
             <h3>{{ $t('contact.info.email') }}</h3>
-            <p>{{ $t('contact.info.emailAddress') }}</p>
+            <p>{{ EMAIL_ADDRESS }}</p>
           </div>
         </div>
         <div class="info-item">
@@ -97,6 +97,8 @@ import { reactive, ref } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
+
+const EMAIL_ADDRESS = "hi@codenav.dev";
 
 const formData = reactive({
   name: "",
