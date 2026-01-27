@@ -168,9 +168,9 @@
               </div>
               <a
                 class="explore-link"
-                href="https://traffictrack.xiaodong.moe/"
+                href="https://apps.apple.com/app/arrival-hk/id6737415245"
                 target="_blank"
-                >{{ $t('products.trafficTrack.explore') }}</a
+                >{{ $t('products.trafficTrack.download') }}</a
               >
             </div>
           </div>

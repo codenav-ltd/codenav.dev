@@ -49,7 +49,7 @@
         "learnMore": "Learn More →"
       },
       "trafficTrack": {
-        "title": "TrafficTrack",
+        "title": "Arrival HK",
         "description": "Real-time traffic analytics and optimization platform for modern businesses",
         "learnMore": "Learn More →"
       },
@@ -183,6 +183,7 @@
         "noAds": "No-Ads"
       },
       "builtWith": "Built with:",
+      "download": "Download on App Store",
       "explore": "Explore",
       "mockup": {
         "header": "TrafficTrack ETA",
