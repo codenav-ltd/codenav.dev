@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lucide-vue-next": "^0.563.0",
     "scss": "^0.2.4",
     "vue": "^3.5.22",
     "vue-i18n": "^11.2.8",
@@ -27,6 +28,9 @@
   "pnpm": {
     "overrides": {
       "vite": "npm:rolldown-vite@7.1.14"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@parcel/watcher"
+    ]
   }
 }

@@ -15,25 +15,32 @@
               <h2>{{ $t('products.myGrammar.title') }}</h2>
               <span class="tag soon">{{ $t('products.myGrammar.tag') }}</span>
             </div>
-            <p class="product-tagline">{{ $t('products.myGrammar.tagline') }}</p>
+            <p class="product-tagline">
+              {{ $t('products.myGrammar.tagline') }}
+            </p>
             <p class="product-description">
               {{ $t('products.myGrammar.description') }}
             </p>
             <div class="features-list">
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.myGrammar.features.aiSuggestions') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.myGrammar.features.aiSuggestions') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.myGrammar.features.payAsYouGo') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.myGrammar.features.payAsYouGo') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.myGrammar.features.multiScene') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.myGrammar.features.multiScene') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.myGrammar.features.toneOptimization') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.myGrammar.features.toneOptimization') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.myGrammar.features.noAds') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.myGrammar.features.noAds') }}
               </div>
             </div>
             <div class="info-flex">
@@ -57,13 +64,25 @@
           <div class="product-visual">
             <div class="mockup-container">
               <div class="mockup-screen">
-                <div class="mockup-header">{{ $t('products.myGrammar.mockup.header') }}</div>
+                <div class="mockup-header">
+                  {{ $t('products.myGrammar.mockup.header') }}
+                </div>
                 <div class="mockup-content">
                   <p class="sample-text">
-                    <span class="correction">{{ $t('products.myGrammar.mockup.sampleText').split(' ')[0] }}</span> {{ $t('products.myGrammar.mockup.sampleText').split(' ').slice(1).join(' ') }}
+                    <span class="correction">{{
+                      $t('products.myGrammar.mockup.sampleText').split(' ')[0]
+                    }}</span>
+                    {{
+                      $t('products.myGrammar.mockup.sampleText')
+                        .split(' ')
+                        .slice(1)
+                        .join(' ')
+                    }}
                   </p>
                   <div class="suggestion-box">
-                    <span class="suggestion-icon">💡</span>
+                    <span class="suggestion-icon"
+                      ><Lightbulb :size="16"
+                    /></span>
                     {{ $t('products.myGrammar.mockup.suggestion') }}
                   </div>
                 </div>
@@ -78,7 +97,9 @@
           <div class="product-visual">
             <div class="mockup-container">
               <div class="mockup-screen dark">
-                <div class="mockup-header">{{ $t('products.trafficTrack.mockup.header') }}</div>
+                <div class="mockup-header">
+                  {{ $t('products.trafficTrack.mockup.header') }}
+                </div>
                 <div class="chart-container">
                   <div class="chart-bar" style="height: 60%"></div>
                   <div class="chart-bar" style="height: 80%"></div>
@@ -88,12 +109,20 @@
                 </div>
                 <div class="stats-row">
                   <div class="stat">
-                    <span class="stat-value">47 {{ $t('products.trafficTrack.mockup.lines') }}</span>
-                    <span class="stat-label">{{ $t('products.trafficTrack.mockup.tracking') }}</span>
+                    <span class="stat-value"
+                      >47 {{ $t('products.trafficTrack.mockup.lines') }}</span
+                    >
+                    <span class="stat-label">{{
+                      $t('products.trafficTrack.mockup.tracking')
+                    }}</span>
                   </div>
                   <div class="stat">
-                    <span class="stat-value">3.7 {{ $t('products.trafficTrack.mockup.min') }}</span>
-                    <span class="stat-label">{{ $t('products.trafficTrack.mockup.arrivalTime') }}</span>
+                    <span class="stat-value"
+                      >3.7 {{ $t('products.trafficTrack.mockup.min') }}</span
+                    >
+                    <span class="stat-label">{{
+                      $t('products.trafficTrack.mockup.arrivalTime')
+                    }}</span>
                   </div>
                 </div>
               </div>
@@ -101,25 +130,32 @@
           </div>
           <div class="product-info">
             <h2>{{ $t('products.trafficTrack.title') }}</h2>
-            <p class="product-tagline">{{ $t('products.trafficTrack.tagline') }}</p>
+            <p class="product-tagline">
+              {{ $t('products.trafficTrack.tagline') }}
+            </p>
             <p class="product-description">
               {{ $t('products.trafficTrack.description') }}
             </p>
             <div class="features-list">
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.trafficTrack.features.realTimeEta') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.trafficTrack.features.realTimeEta') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.trafficTrack.features.advancedSettings') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.trafficTrack.features.advancedSettings') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.trafficTrack.features.fastLaunch') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.trafficTrack.features.fastLaunch') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.trafficTrack.features.instantInfo') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.trafficTrack.features.instantInfo') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.trafficTrack.features.noAds') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.trafficTrack.features.noAds') }}
               </div>
             </div>
             <div class="info-flex">
@@ -146,7 +182,9 @@
           <div class="product-info">
             <div class="product-header">
               <h2>{{ $t('products.livemumu.title') }}</h2>
-              <span class="tag available">{{ $t('products.livemumu.tag') }}</span>
+              <span class="tag available">{{
+                $t('products.livemumu.tag')
+              }}</span>
             </div>
             <p class="product-tagline">{{ $t('products.livemumu.tagline') }}</p>
             <p class="product-description">
@@ -154,19 +192,24 @@
             </p>
             <div class="features-list">
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.livemumu.features.oneClick') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.livemumu.features.oneClick') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.livemumu.features.smartAlerts') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.livemumu.features.smartAlerts') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.livemumu.features.flexible') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.livemumu.features.flexible') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.livemumu.features.multiContact') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.livemumu.features.multiContact') }}
               </div>
               <div class="feature-item">
-                <span class="check">✓</span> {{ $t('products.livemumu.features.bilingual') }}
+                <span class="check"><Check :size="18" /></span>
+                {{ $t('products.livemumu.features.bilingual') }}
               </div>
             </div>
             <div class="info-flex">
@@ -190,14 +233,20 @@
           <div class="product-visual">
             <div class="mockup-container">
               <div class="mockup-screen safety">
-                <div class="mockup-header">{{ $t('products.livemumu.mockup.header') }}</div>
+                <div class="mockup-header">
+                  {{ $t('products.livemumu.mockup.header') }}
+                </div>
                 <div class="safety-content">
                   <div class="status-indicator">
                     <span class="status-dot"></span>
-                    <span class="status-text">{{ $t('products.livemumu.mockup.status') }}</span>
+                    <span class="status-text">{{
+                      $t('products.livemumu.mockup.status')
+                    }}</span>
                   </div>
                   <div class="next-checkin">
-                    <span class="label">{{ $t('products.livemumu.mockup.nextCheckIn') }}</span>
+                    <span class="label">{{
+                      $t('products.livemumu.mockup.nextCheckIn')
+                    }}</span>
                     <span class="time">2h 30m</span>
                   </div>
                   <button class="alive-button">
@@ -217,12 +266,16 @@
     <section class="cta-section">
       <h2>{{ $t('products.cta.title') }}</h2>
       <p>{{ $t('products.cta.subtitle') }}</p>
-      <router-link to="/contact" class="cta-button">{{ $t('products.cta.button') }}</router-link>
+      <router-link to="/contact" class="cta-button">{{
+        $t('products.cta.button')
+      }}</router-link>
     </section>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Check, Lightbulb } from 'lucide-vue-next'
+</script>
 
 <style scoped lang="scss">
 // Variables
@@ -265,7 +318,7 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
   overflow: hidden;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -380,7 +433,8 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {

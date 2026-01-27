@@ -10,7 +10,9 @@
           {{ $t('home.hero.subtitle') }}
         </p>
         <div class="cta-buttons">
-          <router-link to="/products" class="btn btn-primary">{{ $t('home.hero.exploreProducts') }}</router-link>
+          <router-link to="/products" class="btn btn-primary">{{
+            $t('home.hero.exploreProducts')
+          }}</router-link>
         </div>
       </div>
       <div class="hero-image">
@@ -23,28 +25,28 @@
         <h2>{{ $t('home.features.title') }}</h2>
         <div class="feature-grid">
           <div class="feature-card">
-            <div class="icon">🚀</div>
+            <div class="icon"><Rocket :size="32" /></div>
             <h3>{{ $t('home.features.developerLed.title') }}</h3>
             <p>
               {{ $t('home.features.developerLed.description') }}
             </p>
           </div>
           <div class="feature-card">
-            <div class="icon">⚡</div>
+            <div class="icon"><Zap :size="32" /></div>
             <h3>{{ $t('home.features.latestTech.title') }}</h3>
             <p>
               {{ $t('home.features.latestTech.description') }}
             </p>
           </div>
           <div class="feature-card">
-            <div class="icon">👥</div>
+            <div class="icon"><Users :size="32" /></div>
             <h3>{{ $t('home.features.userCentric.title') }}</h3>
             <p>
               {{ $t('home.features.userCentric.description') }}
             </p>
           </div>
           <div class="feature-card">
-            <div class="icon">✨</div>
+            <div class="icon"><Sparkles :size="32" /></div>
             <h3>{{ $t('home.features.innovationFirst.title') }}</h3>
             <p>
               {{ $t('home.features.innovationFirst.description') }}
@@ -63,21 +65,27 @@
             <p>
               {{ $t('home.productsPreview.myGrammar.description') }}
             </p>
-            <router-link to="/products" class="learn-more">{{ $t('home.productsPreview.myGrammar.learnMore') }}</router-link>
+            <router-link to="/products" class="learn-more">{{
+              $t('home.productsPreview.myGrammar.learnMore')
+            }}</router-link>
           </div>
           <div class="product-card traffictrack">
             <h3>{{ $t('home.productsPreview.trafficTrack.title') }}</h3>
             <p>
               {{ $t('home.productsPreview.trafficTrack.description') }}
             </p>
-            <router-link to="/products" class="learn-more">{{ $t('home.productsPreview.trafficTrack.learnMore') }}</router-link>
+            <router-link to="/products" class="learn-more">{{
+              $t('home.productsPreview.trafficTrack.learnMore')
+            }}</router-link>
           </div>
           <div class="product-card livemumu">
             <h3>{{ $t('home.productsPreview.livemumu.title') }}</h3>
             <p>
               {{ $t('home.productsPreview.livemumu.description') }}
             </p>
-            <router-link to="/products" class="learn-more">{{ $t('home.productsPreview.livemumu.learnMore') }}</router-link>
+            <router-link to="/products" class="learn-more">{{
+              $t('home.productsPreview.livemumu.learnMore')
+            }}</router-link>
           </div>
         </div>
       </div>
@@ -86,7 +94,8 @@
 </template>
 
 <script setup lang="ts">
-import Logo from "../components/logo.vue";
+import Logo from '../components/logo.vue'
+import { Rocket, Zap, Users, Sparkles } from 'lucide-vue-next'
 </script>
 
 <style scoped lang="scss">
@@ -110,7 +119,9 @@ $mobile-breakpoint: 768px;
 
 @mixin card-shadow {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 
   &:hover {
     transform: translateY(-5px);
@@ -142,7 +153,7 @@ $mobile-breakpoint: 768px;
   overflow: hidden;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -247,7 +258,7 @@ $mobile-breakpoint: 768px;
   pre {
     margin: 0;
     color: $accent-color;
-    font-family: "Fira Code", monospace;
+    font-family: 'Fira Code', monospace;
     font-size: 1.1rem;
     text-shadow: 0 0 10px rgba($accent-color, 0.5);
   }
@@ -368,7 +379,6 @@ $mobile-breakpoint: 768px;
 }
 
 @keyframes shimmer {
-
   0%,
   100% {
     transform: rotate(0deg);

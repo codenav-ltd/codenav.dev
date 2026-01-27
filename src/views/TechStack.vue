@@ -18,9 +18,12 @@
             v-for="tech in stack.technologies"
             :key="tech.name"
           >
-            <div class="tech-logo" v-if="!tech.logo.includes('.')">
-              {{ tech.logo }}
-            </div>
+            <component
+              v-if="typeof tech.logo != 'string'"
+              :is="tech.logo"
+              :size="48"
+              class="tech-logo tech-icon"
+            />
             <img
               v-else
               :src="tech.logo"
@@ -48,74 +51,89 @@
 </template>
 
 <script setup lang="ts">
-const stacks = [
+import { Server, Github, Cloud } from 'lucide-vue-next'
+import { markRaw, type Component } from 'vue'
+
+interface Technology {
+  name: string
+  logo: string | Component
+  description: string
+  rounded?: number
+}
+
+interface TechStack {
+  category: string
+  technologies: Technology[]
+}
+
+const stacks: TechStack[] = [
   {
-    category: "Frontend Technologies",
+    category: 'Frontend Technologies',
     technologies: [
       {
-        name: "Vue 3",
-        logo: "/vue.svg",
-        description: "Progressive JavaScript framework with Composition API",
+        name: 'Vue 3',
+        logo: '/vue.svg',
+        description: 'Progressive JavaScript framework with Composition API',
       },
       {
-        name: "TypeScript",
-        logo: "/ts.png",
+        name: 'TypeScript',
+        logo: '/ts.png',
         rounded: 8,
-        description: "Type-safe development with superior IDE support",
+        description: 'Type-safe development with superior IDE support',
       },
       {
-        name: "Vite",
-        logo: "/vite.svg",
-        description: "Lightning-fast HMR and optimized build tooling",
+        name: 'Vite',
+        logo: '/vite.svg',
+        description: 'Lightning-fast HMR and optimized build tooling',
       },
       {
-        name: "React",
-        logo: "/react.svg",
-        description: "JavaScript library for building user interfaces",
+        name: 'React',
+        logo: '/react.svg',
+        description: 'JavaScript library for building user interfaces',
       },
     ],
   },
   {
-    category: "Backend Technologies",
+    category: 'Backend Technologies',
     technologies: [
       {
-        name: "Node.js",
-        logo: "/node.png",
-        description: "JavaScript runtime for scalable network applications",
+        name: 'Node.js',
+        logo: '/node.png',
+        description: 'JavaScript runtime for scalable network applications',
       },
       {
-        name: "PostgreSQL",
-        logo: "/postgre.png",
-        description: "Powerful, Row Level Security database system",
+        name: 'PostgreSQL',
+        logo: '/postgre.png',
+        description: 'Powerful, Row Level Security database system',
       },
     ],
   },
   {
-    category: "Infrastructure & DevOps",
+    category: 'Infrastructure & DevOps',
     technologies: [
       {
-        name: "Serverless",
-        logo: "☸️",
-        description: "Event-driven architecture for scalable applications",
+        name: 'Serverless',
+        logo: markRaw(Server),
+        description: 'Event-driven architecture for scalable applications',
       },
       {
-        name: "Docker",
-        logo: "/docker.svg",
-        description: "Containerization for consistent environments",
+        name: 'Docker',
+        logo: '/docker.svg',
+        description: 'Containerization for consistent environments',
       },
       {
-        name: "GitHub Actions",
-        logo: "🔄",
-        description: "CI/CD automation for seamless delivery",
+        name: 'GitHub Actions',
+        logo: markRaw(Github),
+        description: 'CI/CD automation for seamless delivery',
       },
       {
-        name: "Cloud Native",
-        logo: "☁️",
-        description: "AWS, GCP, and Azure for global scalability",
+        name: 'Cloud Native',
+        logo: markRaw(Cloud),
+        description: 'AWS, GCP, and Azure for global scalability',
       },
     ],
   },
-];
+]
 </script>
 
 <style scoped lang="scss">
@@ -152,11 +170,7 @@ $border-radius-lg: 50px;
 
 $mobile-breakpoint: 768px;
 
-$gradient-primary: linear-gradient(
-  135deg,
-  #858585 0%,
-  #000000 100%
-);
+$gradient-primary: linear-gradient(135deg, #858585 0%, #000000 100%);
 $gradient-subtle: linear-gradient(
   135deg,
   rgba($primary-color, 0.1) 0%,
@@ -228,7 +242,7 @@ $transition-float: 3s ease-in-out infinite;
   overflow: hidden;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -317,6 +331,10 @@ img.tech-logo {
     .tech-card:nth-child(#{$i}) & {
       animation-delay: #{($i - 1) * 0.5}s;
     }
+  }
+
+  &.tech-icon {
+    color: $primary-color;
   }
 }
 

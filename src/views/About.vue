@@ -22,28 +22,28 @@
         <h2>{{ $t('about.philosophy.title') }}</h2>
         <div class="philosophy-grid">
           <div class="philosophy-card">
-            <div class="icon">🎯</div>
+            <div class="icon"><Target :size="32" /></div>
             <h3>{{ $t('about.philosophy.developerFirst.title') }}</h3>
             <p>
               {{ $t('about.philosophy.developerFirst.description') }}
             </p>
           </div>
           <div class="philosophy-card">
-            <div class="icon">🚀</div>
+            <div class="icon"><Rocket :size="32" /></div>
             <h3>{{ $t('about.philosophy.bleedingEdge.title') }}</h3>
             <p>
               {{ $t('about.philosophy.bleedingEdge.description') }}
             </p>
           </div>
           <div class="philosophy-card">
-            <div class="icon">💡</div>
+            <div class="icon"><Lightbulb :size="32" /></div>
             <h3>{{ $t('about.philosophy.userExperience.title') }}</h3>
             <p>
               {{ $t('about.philosophy.userExperience.description') }}
             </p>
           </div>
           <div class="philosophy-card">
-            <div class="icon">🔄</div>
+            <div class="icon"><RefreshCw :size="32" /></div>
             <h3>{{ $t('about.philosophy.continuousInnovation.title') }}</h3>
             <p>
               {{ $t('about.philosophy.continuousInnovation.description') }}
@@ -125,13 +125,17 @@
         <p>
           {{ $t('about.cta.description') }}
         </p>
-        <router-link to="/contact" class="cta-button">{{ $t('about.cta.button') }}</router-link>
+        <router-link to="/contact" class="cta-button">{{
+          $t('about.cta.button')
+        }}</router-link>
       </div>
     </section>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Target, Rocket, Lightbulb, RefreshCw } from 'lucide-vue-next'
+</script>
 
 <style scoped lang="scss">
 // Variables
@@ -161,7 +165,9 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
 
 @mixin card-shadow {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 
   &:hover {
     transform: translateY(-5px);
@@ -182,7 +188,7 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
   overflow: hidden;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -405,7 +411,9 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 
   &:hover {
     transform: translateY(-2px);
