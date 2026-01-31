@@ -132,9 +132,9 @@
     },
     "form": {
       "fullName": "Full Name",
-      "fullNamePlaceholder": "John Doe",
+      "fullNamePlaceholder": "Your name or nickname",
       "email": "Email Address",
-      "emailPlaceholder": "john@example.com",
+      "emailPlaceholder": "Your email address",
       "subject": "Subject",
       "subjectPlaceholder": "How can we help you?",
       "message": "Your Message",

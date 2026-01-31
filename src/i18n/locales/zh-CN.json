@@ -132,9 +132,9 @@
     },
     "form": {
       "fullName": "全名",
-      "fullNamePlaceholder": "张三",
+      "fullNamePlaceholder": "您的名字或昵称",
       "email": "电子邮件地址",
-      "emailPlaceholder": "zhangsan@example.com",
+      "emailPlaceholder": "您的电子邮件地址",
       "subject": "主题",
       "subjectPlaceholder": "我们如何帮助您？",
       "message": "您的消息",
