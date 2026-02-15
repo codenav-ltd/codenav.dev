@@ -57,6 +57,11 @@
         "title": "Livemumu",
         "description": "Smart safety verification app that keeps you connected with loved ones through automated check-ins",
         "learnMore": "Learn More →"
+      },
+      "sqlBooks": {
+        "title": "SQL Books",
+        "description": "Create your own databases and run SQL commands with an interactive editor and real-time results",
+        "learnMore": "Learn More →"
       }
     }
   },
@@ -214,6 +219,28 @@
         "nextCheckIn": "Next Check-in",
         "contacts": "Emergency Contacts",
         "button": "I'm Alive"
+      }
+    },
+    "sqlBooks": {
+      "title": "SQL Books",
+      "tagline": "Your Personal Database Playground",
+      "description": "SQL Books is a web app that lets users create their own databases and run SQL commands with instant feedback. Features an SQL editor with syntax highlighting powered by Monaco Editor, table-based result viewing, and support for executing multiple queries at once.",
+      "features": {
+        "createDb": "Create custom databases with unique names",
+        "sqlEditor": "SQL editor with syntax highlighting",
+        "multiQuery": "Execute multiple SQL statements at once",
+        "tableView": "View query results in a clean table GUI",
+        "realTime": "Real-time query execution and results"
+      },
+      "builtWith": "Built with:",
+      "explore": "Explore",
+      "download": "Try Now",
+      "mockup": {
+        "header": "SQL Books Editor",
+        "query": "Query",
+        "results": "Results",
+        "rows": "rows",
+        "button": "Run Query"
       }
     },
     "cta": {

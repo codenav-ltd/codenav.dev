@@ -57,6 +57,11 @@
         "title": "活了么",
         "description": "智能安全验证应用，通过自动签到让您与亲人保持联系",
         "learnMore": "了解更多 →"
+      },
+      "sqlBooks": {
+        "title": "SQL Books",
+        "description": "创建您自己的数据库并通过交互式编辑器和实时结果运行 SQL 命令",
+        "learnMore": "了解更多 →"
       }
     }
   },
@@ -214,6 +219,28 @@
         "nextCheckIn": "下次签到",
         "contacts": "紧急联系人",
         "button": "我还活着"
+      }
+    },
+    "sqlBooks": {
+      "title": "SQL Books",
+      "tagline": "您的个人数据库实验场",
+      "description": "SQL Books 是一款 Web 应用，让用户创建自己的数据库并运行 SQL 命令，获得即时反馈。配备由 Monaco Editor 驱动的 SQL 编辑器，支持语法高亮、基于表格的结果查看，以及一次执行多个查询。",
+      "features": {
+        "createDb": "创建具有唯一名称的自定义数据库",
+        "sqlEditor": "带语法高亮的 SQL 编辑器",
+        "multiQuery": "一次执行多条 SQL 语句",
+        "tableView": "在清晰的表格界面中查看查询结果",
+        "realTime": "实时查询执行和结果显示"
+      },
+      "builtWith": "构建技术：",
+      "explore": "探索",
+      "download": "立即试用",
+      "mockup": {
+        "header": "SQL Books 编辑器",
+        "query": "查询",
+        "results": "结果",
+        "rows": "行",
+        "button": "运行查询"
       }
     },
     "cta": {

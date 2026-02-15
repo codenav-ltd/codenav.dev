@@ -12,7 +12,7 @@
         <div class="cta-buttons">
           <router-link to="/products" class="btn btn-primary">{{
             $t('home.hero.exploreProducts')
-          }}</router-link>
+            }}</router-link>
         </div>
       </div>
       <div class="hero-image">
@@ -25,28 +25,36 @@
         <h2>{{ $t('home.features.title') }}</h2>
         <div class="feature-grid">
           <div class="feature-card">
-            <div class="icon"><Rocket :size="32" /></div>
+            <div class="icon">
+              <Rocket :size="32" />
+            </div>
             <h3>{{ $t('home.features.developerLed.title') }}</h3>
             <p>
               {{ $t('home.features.developerLed.description') }}
             </p>
           </div>
           <div class="feature-card">
-            <div class="icon"><Zap :size="32" /></div>
+            <div class="icon">
+              <Zap :size="32" />
+            </div>
             <h3>{{ $t('home.features.latestTech.title') }}</h3>
             <p>
               {{ $t('home.features.latestTech.description') }}
             </p>
           </div>
           <div class="feature-card">
-            <div class="icon"><Users :size="32" /></div>
+            <div class="icon">
+              <Users :size="32" />
+            </div>
             <h3>{{ $t('home.features.userCentric.title') }}</h3>
             <p>
               {{ $t('home.features.userCentric.description') }}
             </p>
           </div>
           <div class="feature-card">
-            <div class="icon"><Sparkles :size="32" /></div>
+            <div class="icon">
+              <Sparkles :size="32" />
+            </div>
             <h3>{{ $t('home.features.innovationFirst.title') }}</h3>
             <p>
               {{ $t('home.features.innovationFirst.description') }}
@@ -60,14 +68,14 @@
       <div class="container">
         <h2>{{ $t('home.productsPreview.title') }}</h2>
         <div class="products-grid">
-          <div class="product-card mygrammar">
+          <div class="product-card mygrammar" style="display: none;">
             <h3>{{ $t('home.productsPreview.myGrammar.title') }}</h3>
             <p>
               {{ $t('home.productsPreview.myGrammar.description') }}
             </p>
             <router-link to="/products" class="learn-more">{{
               $t('home.productsPreview.myGrammar.learnMore')
-            }}</router-link>
+              }}</router-link>
           </div>
           <div class="product-card traffictrack">
             <h3>{{ $t('home.productsPreview.trafficTrack.title') }}</h3>
@@ -76,16 +84,25 @@
             </p>
             <router-link to="/products" class="learn-more">{{
               $t('home.productsPreview.trafficTrack.learnMore')
-            }}</router-link>
+              }}</router-link>
           </div>
-          <div class="product-card livemumu">
+          <div class="product-card livemumu" style="display: none;">
             <h3>{{ $t('home.productsPreview.livemumu.title') }}</h3>
             <p>
               {{ $t('home.productsPreview.livemumu.description') }}
             </p>
             <router-link to="/products" class="learn-more">{{
               $t('home.productsPreview.livemumu.learnMore')
-            }}</router-link>
+              }}</router-link>
+          </div>
+          <div class="product-card sqlbooks">
+            <h3>{{ $t('home.productsPreview.sqlBooks.title') }}</h3>
+            <p>
+              {{ $t('home.productsPreview.sqlBooks.description') }}
+            </p>
+            <router-link to="/products" class="learn-more">{{
+              $t('home.productsPreview.sqlBooks.learnMore')
+              }}</router-link>
           </div>
         </div>
       </div>
@@ -349,6 +366,10 @@ $mobile-breakpoint: 768px;
     background: linear-gradient(135deg, #42b883 0%, #35495e 100%);
   }
 
+  &.sqlbooks {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+  }
+
   &:hover {
     transform: scale(1.05);
   }
@@ -379,6 +400,7 @@ $mobile-breakpoint: 768px;
 }
 
 @keyframes shimmer {
+
   0%,
   100% {
     transform: rotate(0deg);

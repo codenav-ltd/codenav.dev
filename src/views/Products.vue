@@ -8,95 +8,51 @@
     </div>
 
     <section class="product-showcase">
-      <div class="product mygrammar-section">
-        <div class="product-content">
+      <div v-for="product in products" :key="product.id" :class="['product', product.sectionClass]"
+        :style="product.hidden ? 'display: none;' : ''">
+        <div :class="['product-content', { reverse: product.reverse }]">
           <div class="product-info">
-            <div class="product-header">
-              <h2>{{ $t('products.myGrammar.title') }}</h2>
-              <span class="tag soon">{{ $t('products.myGrammar.tag') }}</span>
+            <div v-if="product.tag" class="product-header">
+              <h2>{{ $t(`products.${product.id}.title`) }}</h2>
+              <span :class="['tag', product.tagClass]">
+                {{ $t(`products.${product.id}.tag`) }}
+              </span>
             </div>
+            <h2 v-else>{{ $t(`products.${product.id}.title`) }}</h2>
             <p class="product-tagline">
-              {{ $t('products.myGrammar.tagline') }}
+              {{ $t(`products.${product.id}.tagline`) }}
             </p>
             <p class="product-description">
-              {{ $t('products.myGrammar.description') }}
+              {{ $t(`products.${product.id}.description`) }}
             </p>
             <div class="features-list">
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.myGrammar.features.aiSuggestions') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.myGrammar.features.payAsYouGo') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.myGrammar.features.multiScene') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.myGrammar.features.toneOptimization') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.myGrammar.features.noAds') }}
+              <div v-for="feature in product.features" :key="feature" class="feature-item">
+                <span class="check">
+                  <Check :size="18" />
+                </span>
+                {{ $t(`products.${product.id}.features.${feature}`) }}
               </div>
             </div>
             <div class="info-flex">
               <div class="tech-stack">
-                <h4>{{ $t('products.myGrammar.builtWith') }}</h4>
+                <h4>{{ $t(`products.${product.id}.builtWith`) }}</h4>
                 <div class="tech-badges">
-                  <span class="tech-badge">Swift</span>
-                  <span class="tech-badge">iOS</span>
+                  <span v-for="tech in product.techStack" :key="tech" class="tech-badge">
+                    {{ tech }}
+                  </span>
                 </div>
               </div>
-              <div class="info-right">
-                <a
-                  class="explore-link"
-                  href="https://mygrammar.xiaodong.moe/"
-                  target="_blank"
-                  >{{ $t('products.myGrammar.explore') }}</a
-                >
+              <div v-if="product.link" class="info-right">
+                <a class="explore-link" :href="product.link" target="_blank">
+                  {{ $t(`products.${product.id}.${product.linkLabel}`) }}
+                </a>
               </div>
             </div>
           </div>
           <div class="product-visual">
             <div class="mockup-container">
-              <div class="mockup-screen">
-                <div class="mockup-header">
-                  {{ $t('products.myGrammar.mockup.header') }}
-                </div>
-                <div class="mockup-content">
-                  <p class="sample-text">
-                    <span class="correction">{{
-                      $t('products.myGrammar.mockup.sampleText').split(' ')[0]
-                    }}</span>
-                    {{
-                      $t('products.myGrammar.mockup.sampleText')
-                        .split(' ')
-                        .slice(1)
-                        .join(' ')
-                    }}
-                  </p>
-                  <div class="suggestion-box">
-                    <span class="suggestion-icon"
-                      ><Lightbulb :size="16"
-                    /></span>
-                    {{ $t('products.myGrammar.mockup.suggestion') }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="product traffictrack-section">
-        <div class="product-content reverse">
-          <div class="product-visual">
-            <div class="mockup-container">
-              <div class="mockup-screen dark">
+              <!-- TrafficTrack Mockup -->
+              <div v-if="product.mockupType === 'traffic'" class="mockup-screen dark">
                 <div class="mockup-header">
                   {{ $t('products.trafficTrack.mockup.header') }}
                 </div>
@@ -109,144 +65,36 @@
                 </div>
                 <div class="stats-row">
                   <div class="stat">
-                    <span class="stat-value"
-                      >47 {{ $t('products.trafficTrack.mockup.lines') }}</span
-                    >
-                    <span class="stat-label">{{
-                      $t('products.trafficTrack.mockup.tracking')
-                    }}</span>
+                    <span class="stat-value">47 {{ $t('products.trafficTrack.mockup.lines') }}</span>
+                    <span class="stat-label">
+                      {{ $t('products.trafficTrack.mockup.tracking') }}
+                    </span>
                   </div>
                   <div class="stat">
-                    <span class="stat-value"
-                      >3.7 {{ $t('products.trafficTrack.mockup.min') }}</span
-                    >
-                    <span class="stat-label">{{
-                      $t('products.trafficTrack.mockup.arrivalTime')
-                    }}</span>
+                    <span class="stat-value">3.7 {{ $t('products.trafficTrack.mockup.min') }}</span>
+                    <span class="stat-label">
+                      {{ $t('products.trafficTrack.mockup.arrivalTime') }}
+                    </span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="product-info">
-            <h2>{{ $t('products.trafficTrack.title') }}</h2>
-            <p class="product-tagline">
-              {{ $t('products.trafficTrack.tagline') }}
-            </p>
-            <p class="product-description">
-              {{ $t('products.trafficTrack.description') }}
-            </p>
-            <div class="features-list">
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.trafficTrack.features.realTimeEta') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.trafficTrack.features.advancedSettings') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.trafficTrack.features.fastLaunch') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.trafficTrack.features.instantInfo') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.trafficTrack.features.noAds') }}
-              </div>
-            </div>
-            <div class="info-flex">
-              <div class="tech-stack">
-                <h4>{{ $t('products.trafficTrack.builtWith') }}</h4>
-                <div class="tech-badges">
-                  <span class="tech-badge">Swift</span>
-                  <span class="tech-badge">iOS</span>
-                </div>
-              </div>
-              <a
-                class="explore-link"
-                href="https://apps.apple.com/app/arrival-hk/id6737415245"
-                target="_blank"
-                >{{ $t('products.trafficTrack.download') }}</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="product livemumu-section">
-        <div class="product-content">
-          <div class="product-info">
-            <div class="product-header">
-              <h2>{{ $t('products.livemumu.title') }}</h2>
-              <span class="tag available">{{
-                $t('products.livemumu.tag')
-              }}</span>
-            </div>
-            <p class="product-tagline">{{ $t('products.livemumu.tagline') }}</p>
-            <p class="product-description">
-              {{ $t('products.livemumu.description') }}
-            </p>
-            <div class="features-list">
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.livemumu.features.oneClick') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.livemumu.features.smartAlerts') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.livemumu.features.flexible') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.livemumu.features.multiContact') }}
-              </div>
-              <div class="feature-item">
-                <span class="check"><Check :size="18" /></span>
-                {{ $t('products.livemumu.features.bilingual') }}
-              </div>
-            </div>
-            <div class="info-flex">
-              <div class="tech-stack">
-                <h4>{{ $t('products.livemumu.builtWith') }}</h4>
-                <div class="tech-badges">
-                  <span class="tech-badge">Swift</span>
-                  <span class="tech-badge">iOS</span>
-                </div>
-              </div>
-              <div class="info-right">
-                <a
-                  class="explore-link"
-                  href="https://apps.apple.com/app/livemumu/id6740096547"
-                  target="_blank"
-                  >{{ $t('products.livemumu.download') }}</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="product-visual">
-            <div class="mockup-container">
-              <div class="mockup-screen safety">
+              <!-- Livemumu Mockup -->
+              <div v-else-if="product.mockupType === 'safety'" class="mockup-screen safety">
                 <div class="mockup-header">
                   {{ $t('products.livemumu.mockup.header') }}
                 </div>
                 <div class="safety-content">
                   <div class="status-indicator">
                     <span class="status-dot"></span>
-                    <span class="status-text">{{
-                      $t('products.livemumu.mockup.status')
-                    }}</span>
+                    <span class="status-text">
+                      {{ $t('products.livemumu.mockup.status') }}
+                    </span>
                   </div>
                   <div class="next-checkin">
-                    <span class="label">{{
-                      $t('products.livemumu.mockup.nextCheckIn')
-                    }}</span>
+                    <span class="label">
+                      {{ $t('products.livemumu.mockup.nextCheckIn') }}
+                    </span>
                     <span class="time">2h 30m</span>
                   </div>
                   <button class="alive-button">
@@ -254,6 +102,61 @@
                   </button>
                   <div class="contacts-count">
                     <span>3 {{ $t('products.livemumu.mockup.contacts') }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SQL Books Mockup -->
+              <div v-else-if="product.mockupType === 'sql'" class="mockup-screen sql">
+                <div class="mockup-header">
+                  {{ $t('products.sqlBooks.mockup.header') }}
+                </div>
+                <div class="sql-content">
+                  <div class="sql-editor">
+                    <div class="code-line">
+                      <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> users;
+                    </div>
+                    <div class="code-line">
+                      <span class="keyword">INSERT INTO</span> users (name)
+                    </div>
+                    <div class="code-line">
+                      <span class="keyword">VALUES</span> (<span class="string">'Alice'</span>);
+                    </div>
+                  </div>
+                  <button class="run-button">
+                    {{ $t('products.sqlBooks.mockup.button') }}
+                  </button>
+                  <div class="results-preview">
+                    <span class="results-text">
+                      {{ $t('products.sqlBooks.mockup.results') }}: 2
+                      {{ $t('products.sqlBooks.mockup.rows') }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MyGrammar Mockup -->
+              <div v-else-if="product.mockupType === 'grammar'" class="mockup-screen">
+                <div class="mockup-header">
+                  {{ $t('products.myGrammar.mockup.header') }}
+                </div>
+                <div class="mockup-content">
+                  <p class="sample-text">
+                    <span class="correction">
+                      {{ $t('products.myGrammar.mockup.sampleText').split(' ')[0] }}
+                    </span>
+                    {{
+                      $t('products.myGrammar.mockup.sampleText')
+                        .split(' ')
+                        .slice(1)
+                        .join(' ')
+                    }}
+                  </p>
+                  <div class="suggestion-box">
+                    <span class="suggestion-icon">
+                      <Lightbulb :size="16" />
+                    </span>
+                    {{ $t('products.myGrammar.mockup.suggestion') }}
                   </div>
                 </div>
               </div>
@@ -275,6 +178,66 @@
 
 <script setup lang="ts">
 import { Check, Lightbulb } from 'lucide-vue-next'
+
+interface Product {
+  id: string
+  sectionClass: string
+  reverse?: boolean
+  hidden?: boolean
+  tag?: boolean
+  tagClass?: string
+  features: string[]
+  techStack: string[]
+  link?: string
+  linkLabel?: string
+  mockupType: 'traffic' | 'safety' | 'sql' | 'grammar'
+}
+
+const products: Product[] = [
+  {
+    id: 'trafficTrack',
+    sectionClass: 'traffictrack-section',
+    reverse: true,
+    features: ['realTimeEta', 'advancedSettings', 'fastLaunch', 'instantInfo', 'noAds'],
+    techStack: ['Swift', 'iOS'],
+    link: 'https://apps.apple.com/app/arrival-hk/id6737415245',
+    linkLabel: 'download',
+    mockupType: 'traffic',
+  },
+  {
+    id: 'livemumu',
+    sectionClass: 'livemumu-section',
+    hidden: true,
+    tag: true,
+    tagClass: 'available',
+    features: ['oneClick', 'smartAlerts', 'flexible', 'multiContact', 'bilingual'],
+    techStack: ['Swift', 'iOS'],
+    link: 'https://apps.apple.com/app/livemumu/id6740096547',
+    linkLabel: 'download',
+    mockupType: 'safety',
+  },
+  {
+    id: 'sqlBooks',
+    sectionClass: 'sqlbooks-section',
+    features: ['createDb', 'sqlEditor', 'multiQuery', 'tableView', 'realTime'],
+    techStack: ['Vue.js', 'Node.js', 'MySQL', 'Monaco Editor'],
+    link: 'https://sql.codenav.dev',
+    linkLabel: 'download',
+    mockupType: 'sql',
+  },
+  {
+    id: 'myGrammar',
+    sectionClass: 'mygrammar-section',
+    tag: true,
+    reverse: true,
+    tagClass: 'soon',
+    features: ['aiSuggestions', 'payAsYouGo', 'multiScene', 'toneOptimization', 'noAds'],
+    techStack: ['Swift', 'iOS'],
+    link: 'https://mygrammar.xiaodong.moe/',
+    linkLabel: 'explore',
+    mockupType: 'grammar',
+  },
+]
 </script>
 
 <style scoped lang="scss">
@@ -361,7 +324,7 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
   &.reverse {
     direction: rtl;
 
-    > * {
+    >* {
       direction: ltr;
     }
   }
@@ -433,10 +396,12 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
@@ -486,6 +451,76 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
   text-align: center;
   color: $text-light;
   font-size: 0.9rem;
+}
+
+.sqlbooks-section {
+  .product-info h2 {
+    @include gradient-text(linear-gradient(135deg, #4285f4 0%, #34a853 100%));
+  }
+
+  .tag.soon {
+    border: 2px solid #4285f4;
+    color: #4285f4;
+  }
+}
+
+.sql-content {
+  padding: 1.5rem 0;
+}
+
+.sql-editor {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+
+  .code-line {
+    margin-bottom: 0.5rem;
+    color: $text-dark;
+
+    .keyword {
+      color: #4285f4;
+      font-weight: 600;
+    }
+
+    .string {
+      color: #0f9d58;
+    }
+  }
+}
+
+.run-button {
+  width: 100%;
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(66, 133, 244, 0.3);
+  }
+}
+
+.results-preview {
+  background: #e8f5e9;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+
+  .results-text {
+    color: #1b5e20;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
 }
 
 .product-tagline {
