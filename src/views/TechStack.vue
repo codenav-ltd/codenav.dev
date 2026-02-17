@@ -13,51 +13,28 @@
       <div class="container">
         <h2>{{ stack.category }}</h2>
         <div class="tech-grid">
-          <div
-            class="tech-card"
+          <TechCard
             v-for="tech in stack.technologies"
             :key="tech.name"
-            :ref="(el) => setCardRef(el as HTMLElement, tech.name)"
-            @mousemove="(e) => handleMouseMove(e, tech.name)"
-            @mouseleave="handleMouseLeave(tech.name)"
-            :style="getCardStyle(tech.name)"
+            :logo="tech.logo"
+            :title="tech.name"
           >
-            <!-- Background blur logo -->
-            <div class="card-bg-logo" :style="getBgLogoStyle(tech.name)">
-              <component
-                v-if="typeof tech.logo != 'string'"
-                :is="tech.logo"
-                :size="120"
-                class="bg-icon"
-              />
-              <img v-else :src="tech.logo" :alt="tech.name" class="bg-img" />
-            </div>
-            <!-- Glow effect layer -->
-            <div class="card-glow" :style="getGlowStyle(tech.name)"></div>
-            <!-- Border glow -->
-            <div
-              class="card-border-glow"
-              :style="getBorderGlowStyle(tech.name)"
-            ></div>
-            <!-- Content -->
-            <div class="card-content">
-              <component
-                v-if="typeof tech.logo != 'string'"
-                :is="tech.logo"
-                :size="48"
-                class="tech-logo tech-icon"
-              />
-              <img
-                v-else
-                :src="tech.logo"
-                :alt="tech.name"
-                class="tech-logo"
-                :style="{ borderRadius: tech.rounded + 'px' }"
-              />
-              <h3>{{ tech.name }}</h3>
-              <p>{{ tech.description }}</p>
-            </div>
-          </div>
+            <component
+              v-if="typeof tech.logo != 'string'"
+              :is="tech.logo"
+              :size="48"
+              class="tech-logo tech-icon"
+            />
+            <img
+              v-else
+              :src="tech.logo"
+              :alt="tech.name"
+              class="tech-logo"
+              :style="{ borderRadius: (tech.rounded ?? 0) + 'px' }"
+            />
+            <h3>{{ tech.name }}</h3>
+            <p>{{ tech.description }}</p>
+          </TechCard>
         </div>
       </div>
     </section>
@@ -75,8 +52,9 @@
 </template>
 
 <script setup lang="ts">
+import TechCard from '../components/TechCard.vue'
 import { Server, Github, Cloud } from 'lucide-vue-next'
-import { markRaw, reactive, type Component } from 'vue'
+import { markRaw, type Component } from 'vue'
 
 interface Technology {
   name: string
@@ -88,105 +66,6 @@ interface Technology {
 interface TechStack {
   category: string
   technologies: Technology[]
-}
-
-interface MouseState {
-  x: number
-  y: number
-  isHovering: boolean
-}
-
-const cardRefs = new Map<string, HTMLElement>()
-const mouseStates = reactive(new Map<string, MouseState>())
-
-const setCardRef = (el: HTMLElement | null, name: string) => {
-  if (el) {
-    cardRefs.set(name, el)
-    if (!mouseStates.has(name)) {
-      mouseStates.set(name, { x: 0, y: 0, isHovering: false })
-    }
-  }
-}
-
-const handleMouseMove = (e: MouseEvent, name: string) => {
-  const card = cardRefs.get(name)
-  if (!card) return
-
-  const rect = card.getBoundingClientRect()
-  const x = e.clientX - rect.left
-  const y = e.clientY - rect.top
-
-  mouseStates.set(name, { x, y, isHovering: true })
-}
-
-const handleMouseLeave = (name: string) => {
-  const state = mouseStates.get(name)
-  if (state) {
-    mouseStates.set(name, { ...state, isHovering: false })
-  }
-}
-
-const getCardStyle = (name: string) => {
-  const state = mouseStates.get(name)
-  if (!state?.isHovering) return {}
-
-  const card = cardRefs.get(name)
-  if (!card) return {}
-
-  const rect = card.getBoundingClientRect()
-  const centerX = rect.width / 2
-  const centerY = rect.height / 2
-
-  const rotateX = (state.y - centerY) / 20
-  const rotateY = (centerX - state.x) / 20
-
-  return {
-    transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`,
-  }
-}
-
-const getGlowStyle = (name: string) => {
-  const state = mouseStates.get(name)
-  if (!state?.isHovering) {
-    return { opacity: 0 }
-  }
-
-  return {
-    opacity: 1,
-    background: `radial-gradient(600px circle at ${state.x}px ${state.y}px, rgba(102, 126, 234, 0.15), transparent 40%)`,
-  }
-}
-
-const getBgLogoStyle = (name: string) => {
-  const state = mouseStates.get(name)
-  const card = cardRefs.get(name)
-  if (!state || !card) {
-    return { opacity: 0 }
-  }
-
-  const rect = card.getBoundingClientRect()
-  // Logo 跟随鼠标位置，但有一定偏移让它看起来在鼠标附近
-  const logoX = state.x
-  const logoY = state.y
-
-  return {
-    opacity: state.isHovering ? 1 : 0,
-    left: `${logoX}px`,
-    top: `${logoY}px`,
-    transform: 'translate(-50%, -50%) scale(1.5)',
-  }
-}
-
-const getBorderGlowStyle = (name: string) => {
-  const state = mouseStates.get(name)
-  if (!state?.isHovering) {
-    return { opacity: 0 }
-  }
-
-  return {
-    opacity: 1,
-    background: `radial-gradient(400px circle at ${state.x}px ${state.y}px, rgba(102, 126, 234, 0.8), transparent 40%)`,
-  }
 }
 
 const stacks: TechStack[] = [
@@ -417,24 +296,7 @@ $transition-float: 3s ease-in-out infinite;
   @include grid-responsive;
 }
 
-.tech-card {
-  background: $white;
-  padding: $spacing-md;
-  border-radius: $border-radius-md;
-  box-shadow: $box-shadow-light;
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  position: relative;
-  overflow: hidden;
-  transition:
-    transform 0.15s ease-out,
-    box-shadow 0.3s ease;
-  will-change: transform;
-
-  &:hover {
-    box-shadow: $box-shadow-medium;
-  }
-
+.tech-grid :deep(.tech-card) {
   h3 {
     color: $dark-color;
     margin-bottom: $spacing-xs;
@@ -445,88 +307,21 @@ $transition-float: 3s ease-in-out infinite;
     color: $medium-gray;
     line-height: 1.6;
   }
-}
 
-.card-bg-logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition:
-    opacity 0.4s ease,
-    left 0.1s ease-out,
-    top 0.1s ease-out;
-  pointer-events: none;
-  z-index: 1;
-  filter: blur(150px) saturate(2);
-
-  .bg-icon {
-    color: $primary-color;
-    opacity: 0.7;
-    width: 150px;
-    height: 150px;
-  }
-
-  .bg-img {
-    width: 150px;
-    height: 150px;
+  img.tech-logo {
+    width: 50px;
+    height: 50px;
     object-fit: contain;
-    opacity: 0.6;
   }
-}
 
-.card-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 2;
-}
+  .tech-logo {
+    font-size: 3rem;
+    margin-bottom: $spacing-sm;
+    display: inline-block;
 
-.card-border-glow {
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  border-radius: $border-radius-md;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 0;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: xor;
-  padding: 1px;
-}
-
-.card-content {
-  position: relative;
-  z-index: 3;
-}
-
-img.tech-logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
-
-.tech-logo {
-  font-size: 3rem;
-  margin-bottom: $spacing-sm;
-  display: inline-block;
-
-  &.tech-icon {
-    color: $primary-color;
+    &.tech-icon {
+      color: $primary-color;
+    }
   }
 }
 

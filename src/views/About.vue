@@ -21,34 +21,34 @@
       <div class="container">
         <h2>{{ $t('about.philosophy.title') }}</h2>
         <div class="philosophy-grid">
-          <div class="philosophy-card">
+          <TechCard :logo="Target">
             <div class="icon"><Target :size="32" /></div>
             <h3>{{ $t('about.philosophy.developerFirst.title') }}</h3>
             <p>
               {{ $t('about.philosophy.developerFirst.description') }}
             </p>
-          </div>
-          <div class="philosophy-card">
+          </TechCard>
+          <TechCard :logo="Rocket">
             <div class="icon"><Rocket :size="32" /></div>
             <h3>{{ $t('about.philosophy.bleedingEdge.title') }}</h3>
             <p>
               {{ $t('about.philosophy.bleedingEdge.description') }}
             </p>
-          </div>
-          <div class="philosophy-card">
+          </TechCard>
+          <TechCard :logo="Lightbulb">
             <div class="icon"><Lightbulb :size="32" /></div>
             <h3>{{ $t('about.philosophy.userExperience.title') }}</h3>
             <p>
               {{ $t('about.philosophy.userExperience.description') }}
             </p>
-          </div>
-          <div class="philosophy-card">
+          </TechCard>
+          <TechCard :logo="RefreshCw">
             <div class="icon"><RefreshCw :size="32" /></div>
             <h3>{{ $t('about.philosophy.continuousInnovation.title') }}</h3>
             <p>
               {{ $t('about.philosophy.continuousInnovation.description') }}
             </p>
-          </div>
+          </TechCard>
         </div>
       </div>
     </section>
@@ -134,6 +134,7 @@
 </template>
 
 <script setup lang="ts">
+import TechCard from '../components/TechCard.vue'
 import { Target, Rocket, Lightbulb, RefreshCw } from 'lucide-vue-next'
 </script>
 
@@ -259,12 +260,7 @@ $pattern-bg: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 
   gap: 2rem;
 }
 
-.philosophy-card {
-  background: $white;
-  padding: 2rem;
-  border-radius: 12px;
-  @include card-shadow;
-
+.philosophy-grid :deep(.tech-card) {
   .icon {
     font-size: 3rem;
     margin-bottom: 1rem;

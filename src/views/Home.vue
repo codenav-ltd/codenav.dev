@@ -24,7 +24,7 @@
       <div class="container">
         <h2>{{ $t('home.features.title') }}</h2>
         <div class="feature-grid">
-          <div class="feature-card">
+          <TechCard :logo="Rocket">
             <div class="icon">
               <Rocket :size="32" />
             </div>
@@ -32,8 +32,8 @@
             <p>
               {{ $t('home.features.developerLed.description') }}
             </p>
-          </div>
-          <div class="feature-card">
+          </TechCard>
+          <TechCard :logo="Zap">
             <div class="icon">
               <Zap :size="32" />
             </div>
@@ -41,8 +41,8 @@
             <p>
               {{ $t('home.features.latestTech.description') }}
             </p>
-          </div>
-          <div class="feature-card">
+          </TechCard>
+          <TechCard :logo="Users">
             <div class="icon">
               <Users :size="32" />
             </div>
@@ -50,8 +50,8 @@
             <p>
               {{ $t('home.features.userCentric.description') }}
             </p>
-          </div>
-          <div class="feature-card">
+          </TechCard>
+          <TechCard :logo="Sparkles">
             <div class="icon">
               <Sparkles :size="32" />
             </div>
@@ -59,7 +59,7 @@
             <p>
               {{ $t('home.features.innovationFirst.description') }}
             </p>
-          </div>
+          </TechCard>
         </div>
       </div>
     </section>
@@ -112,6 +112,7 @@
 
 <script setup lang="ts">
 import Logo from '../components/logo.vue'
+import TechCard from '../components/TechCard.vue'
 import { Rocket, Zap, Users, Sparkles } from 'lucide-vue-next'
 </script>
 
@@ -206,7 +207,7 @@ $mobile-breakpoint: 768px;
   }
 
   .nav {
-    // @include gradient-text(linear-gradient(90deg, #47eded, #4498e7));
+    color: inherit;
   }
 }
 
@@ -304,13 +305,7 @@ $mobile-breakpoint: 768px;
   gap: 2rem;
 }
 
-.feature-card {
-  background: $white;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  @include card-shadow;
-
+.feature-grid :deep(.tech-card) {
   .icon {
     font-size: 3rem;
     margin-bottom: 1rem;
