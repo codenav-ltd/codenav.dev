@@ -52,9 +52,12 @@
           <router-link to="/terms">{{ $t('footer.termsConditions') }}</router-link>
           <template v-if="isConavTech">
             <span class="separator">•</span>
-            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">{{ $t('footer.icpRecord') }}</a>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">{{ $t('footer.icpRecord')
+              }}</a>
           </template>
         </div>
+        <iframe width="380" height="38" style="border:0;margin-top:12px;"
+          src="https://climate.stripe.com/badge/jmJTZ5?theme=dark&size=small&locale=en-GB"></iframe>
       </div>
     </footer>
   </div>
