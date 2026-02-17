@@ -13,9 +13,16 @@
           <router-link to="/tech-stack">{{ $t('nav.techStack') }}</router-link>
           <router-link to="/contact">{{ $t('nav.contact') }}</router-link>
           <div class="btn-container">
-            <button @click="toggleLanguage" class="lang-btn" :title="locale === 'en' ? '切换到中文' : 'Switch to English'">
-              {{ locale === 'en' ? '中文' : 'EN' }}
-            </button>
+            <div class="lang-dropdown" ref="langDropdownRef">
+              <button @click="langDropdownOpen = !langDropdownOpen" class="lang-btn" :title="$t('nav.language')">
+                {{ locale === 'en' ? 'EN' : '中文' }}
+                <span class="lang-chevron" :class="{ open: langDropdownOpen }">▼</span>
+              </button>
+              <div v-if="langDropdownOpen" class="lang-dropdown-menu">
+                <button @click="setLanguage('en')" class="lang-option" :class="{ active: locale === 'en' }">English</button>
+                <button @click="setLanguage('zh-CN')" class="lang-option" :class="{ active: locale === 'zh-CN' }">中文</button>
+              </div>
+            </div>
             <a target="_blank" href="https://sso.codenav.dev" class="sso-btn">{{ $t('nav.signIn') }}</a>
           </div>
         </nav>
@@ -64,13 +71,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
 import Logo from "./components/logo.vue";
 
 const { locale } = useI18n();
 
 const mobileMenuOpen = ref(false);
+const langDropdownOpen = ref(false);
+const langDropdownRef = ref<HTMLElement | null>(null);
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
@@ -80,10 +89,25 @@ const closeMobileMenu = () => {
   mobileMenuOpen.value = false;
 };
 
-const toggleLanguage = () => {
-  locale.value = locale.value === 'en' ? 'zh-CN' : 'en';
-  localStorage.setItem('language', locale.value);
+const setLanguage = (lang: string) => {
+  locale.value = lang;
+  localStorage.setItem('language', lang);
+  langDropdownOpen.value = false;
 };
+
+const handleClickOutside = (e: MouseEvent) => {
+  if (langDropdownRef.value && !langDropdownRef.value.contains(e.target as Node)) {
+    langDropdownOpen.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside);
+});
 
 // Check if the current domain is conav.tech
 const isConavTech = computed(() => {
@@ -199,7 +223,14 @@ const isConavTech = computed(() => {
   gap: 1rem;
 }
 
+.lang-dropdown {
+  position: relative;
+}
+
 .lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   background: transparent;
   border: 2px solid #000000;
   color: #000000;
@@ -214,6 +245,53 @@ const isConavTech = computed(() => {
     background: #000000;
     color: white;
     transform: translateY(-2px);
+  }
+}
+
+.lang-chevron {
+  font-size: 0.6rem;
+  transition: transform 0.2s;
+  opacity: 0.8;
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 120px;
+  background: white;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.lang-option {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  &.active {
+    background: rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+    color: #000000;
   }
 }
 
